@@ -69,17 +69,17 @@
 
 
 
-<meta name="description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看效果例如：1hexo s -p 5000 即可在">
+<meta name="description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后运行： 1hexo g(generate) 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+Github Pages搭建博客后如何发博文">
 <meta property="og:url" content="http://yoursite.com/2017/11/07/hexo+Github-Pages搭建博客后如何发博文/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看效果例如：1hexo s -p 5000 即可在">
+<meta property="og:description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后运行： 1hexo g(generate) 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-07T03:37:40.503Z">
+<meta property="og:updated_time" content="2017-11-15T07:46:08.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+Github Pages搭建博客后如何发博文">
-<meta name="twitter:description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看效果例如：1hexo s -p 5000 即可在">
+<meta name="twitter:description" content="打开hexo所在文件夹， 然后右键运行git bush ,输入： 1hexo new &amp;apos;文章题目XXX&amp;apos; 然后运行： 1hexo g(generate) 然后利用 1hexo server 来在本地查看效果，运行此条命令后会出现查看http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看">
 
 
 
@@ -322,11 +322,12 @@
         <p>打开hexo所在文件夹，</p>
 <p>然后右键运行git bush ,输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &apos;文章题目XXX&apos;</div></pre></td></tr></table></figure>
+<p>然后运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g(generate)</div></pre></td></tr></table></figure>
 <p>然后利用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
 <p>来在本地查看效果，运行此条命令后会出现查看<a href="http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看效果" target="_blank" rel="external">http://localhost:4000来查看本地效果的提示，如果你输入此url后一直在解析，则说明你的4000端口已被占用，可以换别的端口来查看效果</a><br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -p 5000</div></pre></td></tr></table></figure></p>
-<p>即可在localhost:5000查看<br>然后运行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g(generate)</div></pre></td></tr></table></figure>
+<p>即可在localhost:5000查看</p>
 <p>接着运行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>即可</p>
@@ -363,6 +364,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/15/事件委托、事件监听和事件绑定/" rel="prev" title="事件委托、事件监听和事件绑定">
+                事件委托、事件监听和事件绑定 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -433,7 +438,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
