@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -70,13 +70,14 @@
 
 
 <meta name="description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS实现水平垂直居中">
 <meta property="og:url" content="http://yoursite.com/2017/11/07/CSS实现水平垂直居中/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
 <meta property="og:description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-07T02:51:33.400Z">
+<meta property="og:updated_time" content="2017-11-15T08:55:58.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS实现水平垂直居中">
 <meta name="twitter:description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
@@ -180,6 +181,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -206,16 +217,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-about"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -292,6 +293,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -322,6 +345,7 @@
         <h2 id="css实现div垂直水平居中："><a href="#css实现div垂直水平居中：" class="headerlink" title="css实现div垂直水平居中："></a>css实现div垂直水平居中：</h2><h3 id="方法一-margin：auto"><a href="#方法一-margin：auto" class="headerlink" title="方法一 margin：auto"></a>方法一 margin：auto</h3><p>我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.center &#123;  </div><div class="line">  margin: auto;  </div><div class="line">  position: absolute;  </div><div class="line">  top: 0; left: 0; bottom: 0; right: 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>html代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="方法二-负margin法"><a href="#方法二-负margin法" class="headerlink" title="方法二 负margin法"></a>方法二 负margin法</h3><p>我们首先用top:50%和left:50%让div的坐标原点（左上角）移动到整个浏览器中心，然后再利用负margin让它往左偏移自身宽的一半，再往上偏移自身高的一半，这样div的中心点就跟浏览器的中心点对齐了。<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.mainbody&#123;</div><div class="line">    width: 400px;</div><div class="line">    height: 200px;</div><div class="line">    overflow: hidden;</div><div class="line">    background-color: #ccc;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">#center&#123;</div><div class="line">     top: 50%;</div><div class="line">     left: 50%;</div><div class="line">     margin-left: -200px;</div><div class="line">     margin-top: -100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>html代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mainbody&quot; id=&quot;center&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
@@ -338,6 +362,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
       
 
       
@@ -450,10 +480,10 @@
             
             
             <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -461,10 +491,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">4</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -479,6 +509,12 @@
                 <a href="https://github.com/LittlePrettyLiars" target="_blank" title="github">
                   
                     <i class="fa fa-fw fa-globe"></i>github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://gitee.com/ChloeGuo" target="_blank" title="码云">
+                  
+                    <i class="fa fa-fw fa-globe"></i>码云</a>
               </span>
             
               <span class="links-of-author-item">

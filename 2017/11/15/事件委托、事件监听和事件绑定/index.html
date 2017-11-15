@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="事件绑定,事件委托," />
 
 
 
@@ -69,21 +69,22 @@
 
 
 
-<meta name="description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数  在HTML行间元素中直接绑定事件 鼠标事件：onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等 键盘事件：onkeyup , on">
+<meta name="description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数">
+<meta name="keywords" content="事件绑定,事件委托">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件委托、事件监听和事件绑定">
 <meta property="og:url" content="http://yoursite.com/2017/11/15/事件委托、事件监听和事件绑定/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数  在HTML行间元素中直接绑定事件 鼠标事件：onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等 键盘事件：onkeyup , on">
+<meta property="og:description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/bindCompare.jpg?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event1.jpg?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event2.jpg?raw=true">
 <meta property="og:image" content="https://raw.githubusercontent.com/LittlePrettyLiars/glowing-waffle/master/updateGithub/delegate.jpg">
-<meta property="og:updated_time" content="2017-11-15T08:15:11.026Z">
+<meta property="og:updated_time" content="2017-11-15T08:56:17.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件委托、事件监听和事件绑定">
-<meta name="twitter:description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数  在HTML行间元素中直接绑定事件 鼠标事件：onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等 键盘事件：onkeyup , on">
+<meta name="twitter:description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数">
 <meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/bindCompare.jpg?raw=true">
 
 
@@ -185,6 +186,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -211,16 +222,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-about"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -297,6 +298,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -328,12 +351,9 @@
 <ul>
 <li>DOM元素中直接绑定</li>
 <li>Javascript添加事件的方法</li>
-<li>事件监听函数</li>
+<li>事件监听函数<a id="more"></a>
+在HTML行间元素中直接绑定事件<h6 id="鼠标事件："><a href="#鼠标事件：" class="headerlink" title="鼠标事件："></a>鼠标事件：</h6>onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等<h6 id="键盘事件："><a href="#键盘事件：" class="headerlink" title="键盘事件："></a>键盘事件：</h6>onkeyup , onkeydown,onkeypress<h6 id="表单事件："><a href="#表单事件：" class="headerlink" title="表单事件："></a>表单事件：</h6>onsubmit,onblur,onfocus</li>
 </ul>
-<p>在HTML行间元素中直接绑定事件</p>
-<h6 id="鼠标事件："><a href="#鼠标事件：" class="headerlink" title="鼠标事件："></a>鼠标事件：</h6><p>onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等</p>
-<h6 id="键盘事件："><a href="#键盘事件：" class="headerlink" title="键盘事件："></a>键盘事件：</h6><p>onkeyup , onkeydown,onkeypress</p>
-<h6 id="表单事件："><a href="#表单事件：" class="headerlink" title="表单事件："></a>表单事件：</h6><p>onsubmit,onblur,onfocus</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; onclick = &quot;getSomething()&quot; /&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	function getSomething()&#123;</div><div class="line">		alert(&apos;Something&apos;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>在JavaScript代码中绑定事件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; id=&quot;btn&quot; /&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	document.getElementById(&quot;btn&quot;).onclick = function()&#123;</div><div class="line">		alert(&apos;Something&apos;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
@@ -371,6 +391,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/事件绑定/" rel="tag"># 事件绑定</a>
+          
+            <a href="/tags/事件委托/" rel="tag"># 事件委托</a>
+          
+        </div>
       
 
       
@@ -479,10 +507,10 @@
             
             
             <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -490,10 +518,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">4</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -508,6 +536,12 @@
                 <a href="https://github.com/LittlePrettyLiars" target="_blank" title="github">
                   
                     <i class="fa fa-fw fa-globe"></i>github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://gitee.com/ChloeGuo" target="_blank" title="码云">
+                  
+                    <i class="fa fa-fw fa-globe"></i>码云</a>
               </span>
             
               <span class="links-of-author-item">

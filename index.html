@@ -180,6 +180,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -206,16 +216,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-about"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -294,6 +294,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -322,42 +344,18 @@
 
       
         
-          
-            <h2 id="事件委托、事件监听和事件绑定"><a href="#事件委托、事件监听和事件绑定" class="headerlink" title="事件委托、事件监听和事件绑定"></a>事件委托、事件监听和事件绑定</h2><h4 id="事件绑定："><a href="#事件绑定：" class="headerlink" title="事件绑定："></a>事件绑定：</h4><p>在javascript中，有三种常用的事件绑定的方法：</p>
+          <h2 id="事件委托、事件监听和事件绑定"><a href="#事件委托、事件监听和事件绑定" class="headerlink" title="事件委托、事件监听和事件绑定"></a>事件委托、事件监听和事件绑定</h2><h4 id="事件绑定："><a href="#事件绑定：" class="headerlink" title="事件绑定："></a>事件绑定：</h4><p>在javascript中，有三种常用的事件绑定的方法：</p>
 <ul>
 <li>DOM元素中直接绑定</li>
 <li>Javascript添加事件的方法</li>
-<li>事件监听函数</li>
-</ul>
-<p>在HTML行间元素中直接绑定事件</p>
-<h6 id="鼠标事件："><a href="#鼠标事件：" class="headerlink" title="鼠标事件："></a>鼠标事件：</h6><p>onclick,ondbclick,onmouseover,onmousedown,onmouseup,onmousemove,onmouseout等</p>
-<h6 id="键盘事件："><a href="#键盘事件：" class="headerlink" title="键盘事件："></a>键盘事件：</h6><p>onkeyup , onkeydown,onkeypress</p>
-<h6 id="表单事件："><a href="#表单事件：" class="headerlink" title="表单事件："></a>表单事件：</h6><p>onsubmit,onblur,onfocus</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; onclick = &quot;getSomething()&quot; /&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	function getSomething()&#123;</div><div class="line">		alert(&apos;Something&apos;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>在JavaScript代码中绑定事件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; id=&quot;btn&quot; /&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	document.getElementById(&quot;btn&quot;).onclick = function()&#123;</div><div class="line">		alert(&apos;Something&apos;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h4 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h4><p>使用addEventListener()或attachEvent()来绑定事件监听函数</p>
-<p>出现事件监听的原因<br>因为对于同一个对象使用前两种方式绑定多个方法的时候，后一个方法会把前一个方法覆盖，因此最后的效果只有最后一个方法的效果，举个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;click me!&quot; /&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	window.onload = function()&#123; </div><div class="line">	 var btn = document.getElementById(&quot;btn&quot;); </div><div class="line">	 btn.onclick = function()&#123; </div><div class="line">	  alert(&quot;第一个事件&quot;); </div><div class="line">	 &#125; </div><div class="line">	 btn.onclick = function()&#123; </div><div class="line">	  alert(&quot;第二个事件&quot;); </div><div class="line">	 &#125; </div><div class="line">	 btn.onclick = function()&#123; </div><div class="line">	  alert(&quot;第三个事件&quot;); </div><div class="line">	 &#125; </div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>结果如图：<img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/bindCompare.jpg?raw=true" alt="image"></p>
-<p>使用addEventListener,即可触发两个事件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var eventOne = function()&#123; </div><div class="line"> alert(&quot;第一个监听事件&quot;); </div><div class="line">&#125; </div><div class="line">function eventTwo()&#123; </div><div class="line"> alert(&quot;第二个监听事件&quot;); </div><div class="line">&#125; </div><div class="line">window.onload = function()&#123; </div><div class="line"> var btn = document.getElementById(&quot;yuanEvent&quot;); </div><div class="line"> //addEventListener：绑定函数 </div><div class="line"> btn.addEventListener(&quot;click&quot;,eventOne); </div><div class="line"> btn.addEventListener(&quot;click&quot;,eventTwo); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果如图：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event1.jpg?raw=true" alt="image"><br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event2.jpg?raw=true" alt="image"></p>
-<p>采用这样的方式绑定后，还可以解绑，即在上面的代码后面添加一条如下语句，即可解绑事件2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">btn.removeEventListener(&quot;click&quot;,eventTwo);</div></pre></td></tr></table></figure>
-<p><strong>注意事项</strong></p>
-<p>解除绑定事件时要用函数的句柄，而不能把整个函数搬到那里，否则是无法解除绑定的</p>
-<p>这样的写法是错误的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">btn.removeEventListener(&quot;click&quot;,function eventTwo()&#123; </div><div class="line">		 alert(&quot;第二个监听事件&quot;);</div></pre></td></tr></table></figure></p>
-<p>不会起作用</p>
-<p>事件监听现有的规范W3c规范</p>
-<p>W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。（这一块儿还不清楚，之后还会学习再来做补充）</p>
-<h4 id="事件委托（event-delegation）"><a href="#事件委托（event-delegation）" class="headerlink" title="事件委托（event delegation）"></a>事件委托（event delegation）</h4><p>事件委托就是利用冒泡的原理，把事件加到父元素或者祖先元素上  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<p>当每个子元素被点击时，将有各种各样的时间发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如就是刚刚上面的一段代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，输出ID!</div><div class="line">		console.log(&quot;List &quot;+ e.target.id + &quot; was clicked!&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>就可以知道是哪个子元素被点击：<br><img src="https://raw.githubusercontent.com/LittlePrettyLiars/glowing-waffle/master/updateGithub/delegate.jpg" alt="image"></p>
-
-          
+<li>事件监听函数
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/事件委托、事件监听和事件绑定/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -577,6 +575,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -605,14 +625,16 @@
 
       
         
-          
-            <h2 id="css实现div垂直水平居中："><a href="#css实现div垂直水平居中：" class="headerlink" title="css实现div垂直水平居中："></a>css实现div垂直水平居中：</h2><h3 id="方法一-margin：auto"><a href="#方法一-margin：auto" class="headerlink" title="方法一 margin：auto"></a>方法一 margin：auto</h3><p>我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.center &#123;  </div><div class="line">  margin: auto;  </div><div class="line">  position: absolute;  </div><div class="line">  top: 0; left: 0; bottom: 0; right: 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+          <h2 id="css实现div垂直水平居中："><a href="#css实现div垂直水平居中：" class="headerlink" title="css实现div垂直水平居中："></a>css实现div垂直水平居中：</h2><h3 id="方法一-margin：auto"><a href="#方法一-margin：auto" class="headerlink" title="方法一 margin：auto"></a>方法一 margin：auto</h3><p>我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.center &#123;  </div><div class="line">  margin: auto;  </div><div class="line">  position: absolute;  </div><div class="line">  top: 0; left: 0; bottom: 0; right: 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>html代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h3 id="方法二-负margin法"><a href="#方法二-负margin法" class="headerlink" title="方法二 负margin法"></a>方法二 负margin法</h3><p>我们首先用top:50%和left:50%让div的坐标原点（左上角）移动到整个浏览器中心，然后再利用负margin让它往左偏移自身宽的一半，再往上偏移自身高的一半，这样div的中心点就跟浏览器的中心点对齐了。<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.mainbody&#123;</div><div class="line">    width: 400px;</div><div class="line">    height: 200px;</div><div class="line">    overflow: hidden;</div><div class="line">    background-color: #ccc;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">#center&#123;</div><div class="line">     top: 50%;</div><div class="line">     left: 50%;</div><div class="line">     margin-left: -200px;</div><div class="line">     margin-top: -100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>html代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mainbody&quot; id=&quot;center&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/07/CSS实现水平垂直居中/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -975,10 +997,10 @@
             
             
             <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -986,10 +1008,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">4</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -1004,6 +1026,12 @@
                 <a href="https://github.com/LittlePrettyLiars" target="_blank" title="github">
                   
                     <i class="fa fa-fw fa-globe"></i>github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://gitee.com/ChloeGuo" target="_blank" title="码云">
+                  
+                    <i class="fa fa-fw fa-globe"></i>码云</a>
               </span>
             
               <span class="links-of-author-item">
