@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="事件冒泡," />
 
 
 
@@ -69,21 +69,23 @@
 
 
 
-<meta name="description" content="圣杯布局和双飞翼布局解决的问题：两边顶宽，中间自适应的三栏布局，中间栏要放在文档流前面先渲染 1234567&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;	&amp;lt;div class=&amp;quot;middle&amp;quot;&amp;gt;       中间部分	&amp;lt;/div&amp;gt;	&amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;左边&amp;lt;/div&amp;">
-<meta name="keywords" content="CSS">
+<meta name="description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta name="keywords" content="事件冒泡">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS的圣杯布局、双飞翼布局">
-<meta property="og:url" content="http://yoursite.com/2017/11/15/CSS的圣杯布局、双飞翼布局/index.html">
+<meta property="og:title" content="事件冒泡">
+<meta property="og:url" content="http://yoursite.com/2017/11/16/事件冒泡/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="圣杯布局和双飞翼布局解决的问题：两边顶宽，中间自适应的三栏布局，中间栏要放在文档流前面先渲染 1234567&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;	&amp;lt;div class=&amp;quot;middle&amp;quot;&amp;gt;       中间部分	&amp;lt;/div&amp;gt;	&amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;左边&amp;lt;/div&amp;">
+<meta property="og:description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/CSS%E5%9C%A3%E6%9D%AF%E5%8F%8C%E9%A3%9E%E7%BF%BC/%E5%9C%A3%E6%9D%AF.jpg?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/CSS%E5%9C%A3%E6%9D%AF%E5%8F%8C%E9%A3%9E%E7%BF%BC/shaungfeiyi.jpg?raw=true">
-<meta property="og:updated_time" content="2017-11-15T09:35:31.996Z">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/before.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/after.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true">
+<meta property="og:updated_time" content="2017-11-16T13:17:19.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS的圣杯布局、双飞翼布局">
-<meta name="twitter:description" content="圣杯布局和双飞翼布局解决的问题：两边顶宽，中间自适应的三栏布局，中间栏要放在文档流前面先渲染 1234567&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;	&amp;lt;div class=&amp;quot;middle&amp;quot;&amp;gt;       中间部分	&amp;lt;/div&amp;gt;	&amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;左边&amp;lt;/div&amp;">
-<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/CSS%E5%9C%A3%E6%9D%AF%E5%8F%8C%E9%A3%9E%E7%BF%BC/%E5%9C%A3%E6%9D%AF.jpg?raw=true">
+<meta name="twitter:title" content="事件冒泡">
+<meta name="twitter:description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
 
 
 
@@ -113,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/15/CSS的圣杯布局、双飞翼布局/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/16/事件冒泡/"/>
 
 
 
 
 
-  <title>CSS的圣杯布局、双飞翼布局 | Chloe Guo的博客</title>
+  <title>事件冒泡 | Chloe Guo的博客</title>
   
 
 
@@ -256,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/CSS的圣杯布局、双飞翼布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/16/事件冒泡/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -273,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS的圣杯布局、双飞翼布局</h1>
+          <h1 class="post-title" itemprop="name headline">事件冒泡</h1>
         
 
         <div class="post-meta">
@@ -285,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T17:20:12+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T17:50:35+08:00">
+                2017-11-16
               </time>
             
 
@@ -308,8 +310,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/事件冒泡/" itemprop="url" rel="index">
+                    <span itemprop="name">事件冒泡</span>
                   </a>
                 </span>
 
@@ -345,24 +347,16 @@
       
 
       
-        <p>圣杯布局和双飞翼布局解决的问题：两边顶宽，中间自适应的三栏布局，中间栏要放在文档流前面先渲染</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;div class=&quot;middle&quot;&gt;</div><div class="line">       中间部分</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;left&quot;&gt;左边&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+        <p>要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。</p>
+<p><strong>事件冒泡</strong>：  </p>
+<p>事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true" alt="image">  </p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">	padding: 0 200px;</div><div class="line">	overflow: hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.middle&#123;</div><div class="line">	width: 100%; </div><div class="line">	height:200px;</div><div class="line">	background-color: pink;</div><div class="line">	float:left;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.left&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 200px;</div><div class="line">	background-color: grey;</div><div class="line">	margin-left: -100%;</div><div class="line">	float:left;</div><div class="line">	position: relative;</div><div class="line">	left: -200px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.right&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 200px;</div><div class="line">	background-color: yellow;</div><div class="line">	margin-left: -200px;</div><div class="line">	float:left;</div><div class="line">	position: relative;</div><div class="line">	right: -200px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>两种布局在解决问题的前面部分是一致的，都是三栏全部浮动，左右两列加上负margin让其与中间div并排，并形成三栏布局</p>
-<p>两者的不同在于</p>
-<p>圣杯布局，为了中间div内容不被遮挡，</p>
-<ol>
-<li>三者均设置左浮动；</li>
-<li>设置middle的宽度为100%；</li>
-<li>设置负边距，left负左边距设置100%，right负左边距为它本身的宽度</li>
-<li>设置container左右的padding值给左右两个子面板留出空间</li>
-<li>设置left和right为相对定位，position：relative，“left”的left值为负的”left”的宽度，“right”的right值为负的“right”宽度<h6 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h6><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/CSS%E5%9C%A3%E6%9D%AF%E5%8F%8C%E9%A3%9E%E7%BF%BC/%E5%9C%A3%E6%9D%AF.jpg?raw=true" alt="image"><h4 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h4>当中间部分的宽度小于两边的宽度时，布局就会乱掉</li>
-</ol>
-<p>此时，双飞翼就驾着七彩祥云来了，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;hd&quot;&gt;header&lt;/div&gt; </div><div class="line">  &lt;div id=&quot;middle&quot;&gt;</div><div class="line">    &lt;div id=&quot;inside&quot;&gt;middle&lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div id=&quot;left&quot;&gt;left&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;right&quot;&gt;right&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;footer&quot;&gt;footer&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">.middle&#123;</div><div class="line">	width: 100%;</div><div class="line">	height: 200px;</div><div class="line">	float: left;</div><div class="line">	background-color: pink;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.inside&#123;</div><div class="line">	margin:0 200px;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">.left&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 200px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">	background-color: grey;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.right&#123;</div><div class="line">	width:200px;</div><div class="line">	height: 200px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -200px;</div><div class="line">	background-color: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/CSS%E5%9C%A3%E6%9D%AF%E5%8F%8C%E9%A3%9E%E7%BF%BC/shaungfeiyi.jpg?raw=true" alt="image"><br> 双飞翼布局是在middle的div里插入一个div,通过调整内部div的margin值，实现中间栏自适应，内容写到内部div中</p>
+<p>事件监听的W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。当选择为true时，意味着停止冒泡，对我所产生的行为和我的父元素和祖先元素都没有关系，不要再向上通报他们了。<br>事件冒泡和事件捕获意味着事件触发顺序不同，事件冒泡是从子到父，事件捕获是从父到子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是大头爸爸&apos;);</div><div class="line">	&#125;);</div><div class="line">document.getElementById(&quot;item-1&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是小头儿子&apos;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>结果：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/before.png?raw=true" alt="image"><br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/after.png?raw=true" alt="image"><br>而此时如果我们将useCapture置为true，则两个顺序会反过来，即先执行父元素上事件，后执行子元素上事件。</p>
+<p>但是事件冒泡还是有自己的用武之地，例如就是上面的列表，当每个li被点击时，可能有各种各样的事件发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如实现点击每个li的时候给被选中的li添加‘active’属性，就可以利用这一特性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.active&#123;</div><div class="line">		background: blue;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(&apos;#parent-list&apos;).on(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，给他添加active类</div><div class="line">		$(e.target).addClass(&apos;active&apos;).siblings().removeClass(&apos;active&apos;);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>效果如图所示：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true" alt="image"></p>
 
       
     </div>
@@ -380,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/事件冒泡/" rel="tag"># 事件冒泡</a>
           
         </div>
       
@@ -393,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/事件委托、事件监听和事件绑定/" rel="next" title="事件委托、事件监听和事件绑定">
-                <i class="fa fa-chevron-left"></i> 事件委托、事件监听和事件绑定
+              <a href="/2017/11/15/CSS的圣杯布局、双飞翼布局/" rel="next" title="CSS的圣杯布局、双飞翼布局">
+                <i class="fa fa-chevron-left"></i> CSS的圣杯布局、双飞翼布局
               </a>
             
           </div>
@@ -402,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/16/事件冒泡/" rel="prev" title="事件冒泡">
-                事件冒泡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -457,17 +447,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -558,22 +539,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#效果图"><span class="nav-number">1.</span> <span class="nav-text">效果图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存在的问题"><span class="nav-number"></span> <span class="nav-text">存在的问题</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

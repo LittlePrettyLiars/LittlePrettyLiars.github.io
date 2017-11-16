@@ -81,7 +81,7 @@
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event1.jpg?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/updateGithub/event2.jpg?raw=true">
 <meta property="og:image" content="https://raw.githubusercontent.com/LittlePrettyLiars/glowing-waffle/master/updateGithub/delegate.jpg">
-<meta property="og:updated_time" content="2017-11-15T08:57:34.535Z">
+<meta property="og:updated_time" content="2017-11-16T09:28:09.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件委托、事件监听和事件绑定">
 <meta name="twitter:description" content="事件委托、事件监听和事件绑定事件绑定：在javascript中，有三种常用的事件绑定的方法：  DOM元素中直接绑定 Javascript添加事件的方法 事件监听函数">
@@ -374,7 +374,7 @@
 <p>W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。（这一块儿还不清楚，之后还会学习再来做补充）</p>
 <h4 id="事件委托（event-delegation）"><a href="#事件委托（event-delegation）" class="headerlink" title="事件委托（event delegation）"></a>事件委托（event delegation）</h4><p>事件委托就是利用冒泡的原理，把事件加到父元素或者祖先元素上  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<p>当每个子元素被点击时，将有各种各样的时间发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如就是刚刚上面的一段代码</p>
+<p>当每个子元素被点击时，将有各种各样的事件发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如就是刚刚上面的一段代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，输出ID!</div><div class="line">		console.log(&quot;List &quot;+ e.target.id + &quot; was clicked!&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>就可以知道是哪个子元素被点击：<br><img src="https://raw.githubusercontent.com/LittlePrettyLiars/glowing-waffle/master/updateGithub/delegate.jpg" alt="image"></p>
 
@@ -409,7 +409,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/07/hexo+Github-Pages搭建博客后如何发博文/" rel="next" title="hexo+Github Pages搭建博客后如何发博文">
+              <a href="/2017/11/07/hexo+GithubPages搭建博客后如何发博文/" rel="next" title="hexo+Github Pages搭建博客后如何发博文">
                 <i class="fa fa-chevron-left"></i> hexo+Github Pages搭建博客后如何发博文
               </a>
             
@@ -512,7 +512,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -523,7 +523,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
