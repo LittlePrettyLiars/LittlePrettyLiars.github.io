@@ -69,22 +69,22 @@
 
 
 
-<meta name="description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta name="description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
 <meta name="keywords" content="事件冒泡">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件冒泡">
 <meta property="og:url" content="http://yoursite.com/2017/11/16/事件冒泡/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta property="og:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/before.png?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/after.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true">
-<meta property="og:updated_time" content="2017-11-16T13:21:04.857Z">
+<meta property="og:updated_time" content="2017-11-17T09:46:20.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件冒泡">
-<meta name="twitter:description" content="要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta name="twitter:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
 <meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
 
 
@@ -347,16 +347,18 @@
       
 
       
-        <p>要想了解jQuery中的事件绑定和事件委托，我们首先需要了解事件冒泡的原理。</p>
+        <p>要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。</p>
 <p><strong>事件冒泡</strong>：  </p>
 <p>事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true" alt="image">  </p>
 <a id="more"></a>
 <p>事件监听的W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。当选择为true时，意味着停止冒泡，对我所产生的行为和我的父元素和祖先元素都没有关系，不要再向上通报他们了。<br>事件冒泡和事件捕获意味着事件触发顺序不同，事件冒泡是从子到父，事件捕获是从父到子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是大头爸爸&apos;);</div><div class="line">	&#125;);</div><div class="line">document.getElementById(&quot;item-1&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是小头儿子&apos;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>结果：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/before.png?raw=true" alt="image"><br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/after.png?raw=true" alt="image"><br>而此时如果我们将useCapture置为true，则两个顺序会反过来，即先执行父元素上事件，后执行子元素上事件。</p>
+<p>结果：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true" alt="image"></p>
+<p>而此时如果我们将useCapture置为true，则两个顺序会反过来，即先执行父元素上事件，后执行子元素上事件。<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true" alt="image"></p>
 <p>但是事件冒泡还是有自己的用武之地，例如就是上面的列表，当每个li被点击时，可能有各种各样的事件发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如实现点击每个li的时候给被选中的li添加‘active’属性，就可以利用这一特性：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.active&#123;</div><div class="line">		background: blue;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(&apos;#parent-list&apos;).on(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，给他添加active类</div><div class="line">		$(e.target).addClass(&apos;active&apos;).siblings().removeClass(&apos;active&apos;);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>效果如图所示：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true" alt="image"></p>
+<h4 id="如何阻止事件冒泡"><a href="#如何阻止事件冒泡" class="headerlink" title="如何阻止事件冒泡"></a>如何阻止事件冒泡</h4><p>使用事件对象的 stopPropagation 方法<br>具体用法如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//地址的编辑</div><div class="line">$(document).on(&apos;click&apos;,&apos;.address-update&apos;,function(e)&#123;</div><div class="line">	e.stopPropagation();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -447,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -539,6 +550,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何阻止事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">如何阻止事件冒泡</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
