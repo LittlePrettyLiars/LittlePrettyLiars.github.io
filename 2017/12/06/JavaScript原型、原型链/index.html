@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="原型,原型链,prototype,_proto_," />
 
 
 
@@ -69,18 +69,22 @@
 
 
 
-<meta name="description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
-<meta name="keywords" content="CSS">
+<meta name="description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
+<meta name="keywords" content="原型,原型链,prototype,_proto_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS实现水平垂直居中">
-<meta property="og:url" content="http://yoursite.com/2017/11/07/CSS实现水平垂直居中/index.html">
+<meta property="og:title" content="JavaScript原型、原型链">
+<meta property="og:url" content="http://yoursite.com/2017/12/06/JavaScript原型、原型链/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
+<meta property="og:description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-16T13:22:46.561Z">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/name.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/dir.png?raw=true">
+<meta property="og:updated_time" content="2017-12-06T09:14:47.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS实现水平垂直居中">
-<meta name="twitter:description" content="css实现div垂直水平居中：方法一 margin：auto我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下css代码：12345.center &amp;#123;    margin: auto;    position: absolute;    top: 0; left: 0; bott">
+<meta name="twitter:title" content="JavaScript原型、原型链">
+<meta name="twitter:description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
+<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true">
 
 
 
@@ -110,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/07/CSS实现水平垂直居中/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/06/JavaScript原型、原型链/"/>
 
 
 
 
 
-  <title>CSS实现水平垂直居中 | Chloe Guo的博客</title>
+  <title>JavaScript原型、原型链 | Chloe Guo的博客</title>
   
 
 
@@ -253,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/CSS实现水平垂直居中/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/JavaScript原型、原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -270,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS实现水平垂直居中</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript原型、原型链</h1>
         
 
         <div class="post-meta">
@@ -282,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T10:50:05+08:00">
-                2017-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T16:57:29+08:00">
+                2017-12-06
               </time>
             
 
@@ -305,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -342,13 +346,27 @@
       
 
       
-        <h2 id="css实现div垂直水平居中："><a href="#css实现div垂直水平居中：" class="headerlink" title="css实现div垂直水平居中："></a>css实现div垂直水平居中：</h2><h3 id="方法一-margin：auto"><a href="#方法一-margin：auto" class="headerlink" title="方法一 margin：auto"></a>方法一 margin：auto</h3><p>我们通常用margin 0 auto来实现居中，但是这样是无法实现垂直居中的，但其实稍微对此作一些修改就可以实现想要的效果，就是margin auto，代码如下<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.center &#123;  </div><div class="line">  margin: auto;  </div><div class="line">  position: absolute;  </div><div class="line">  top: 0; left: 0; bottom: 0; right: 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>html代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+        <p><strong>在JavaScipt中，万物皆对象</strong> </p>
+<h4 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h4><ul>
+<li><strong>是什么</strong><br>在javaScript中，我们创建的每个函数都有一个<strong>prototype</strong>(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个<strong>对象</strong>，这个对象又有一个<strong>constructor</strong>属性，该属性指向是构造函数；<br>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function sayHi()&#123;</div><div class="line">	this.name = &apos;hello&apos;;</div><div class="line">	this.saySomething = function()&#123;</div><div class="line">		console.log(this.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <a id="more"></a>
-<h3 id="方法二-负margin法"><a href="#方法二-负margin法" class="headerlink" title="方法二 负margin法"></a>方法二 负margin法</h3><p>我们首先用top:50%和left:50%让div的坐标原点（左上角）移动到整个浏览器中心，然后再利用负margin让它往左偏移自身宽的一半，再往上偏移自身高的一半，这样div的中心点就跟浏览器的中心点对齐了。<br>css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.mainbody&#123;</div><div class="line">    width: 400px;</div><div class="line">    height: 200px;</div><div class="line">    overflow: hidden;</div><div class="line">    background-color: #ccc;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">#center&#123;</div><div class="line">     top: 50%;</div><div class="line">     left: 50%;</div><div class="line">     margin-left: -200px;</div><div class="line">     margin-top: -100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>html代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mainbody&quot; id=&quot;center&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>在没有设置这个原型属性的时候，这个原型包含两部分(constructor 和<em>proto</em>),<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(sayHi.prototype);</div></pre></td></tr></table></figure></p>
+<p>结果是：</p>
+<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true" alt="image"><br>默认情况下，a.prototype下会带有一个constructor属性，这个属性指向创建当前函数对象的构造函数，在上例中，a.prototype.constructor指向的是sayHi()函数本身</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sayHi.prototype.constructor === sayHi//true</div></pre></td></tr></table></figure>
+<p>我们可以给继续给原型添加属性和方法，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sayHi.prototype.name = &apos;nihao&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/name.png?raw=true" alt="image"></p>
+<ul>
+<li><strong>作用</strong><br>用来实现基于原型的集成和属性的共享 （其实到现在还是没有理解使用圆形的好处，以后在应用中用到应该会理解更深刻）</li>
+</ul>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>提到原型链，就不得不说<em>proto</em>，<em>proto</em>是任何对象都会有的属性，JavaScript中万物皆对象，所以会构成一条<em>proto</em>连起来的一条链，递归访问<em>proto</em>必须到头，并且值是null<br><em>proto</em>是js内部使用寻找原型链的属性，通过该属性可以允许使用实例对象直接访问原型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">var p = new Person();</div><div class="line">//以前是不能直接使用p直接访问对象原型，现在有了_proto_后，p._proto_可以直接访问对象原型，p.__proto__ === Person.prototype</div></pre></td></tr></table></figure>
+<p>当js引擎查找对象属性，先在对象本身属性中查找，如果没有，就沿着原型链向上查找<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name=name;</div><div class="line">  this.age=age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype=&#123;</div><div class="line">  sayHello:function()&#123;</div><div class="line">    console.log(&quot;你好&quot;+&quot;,&quot;+this.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p =new Person(&quot;尼尔.波兹曼&quot;,19);</div><div class="line">p.sayHello();</div><div class="line">console.dir(p);</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/dir.png?raw=true" alt="image"></p>
+
       
     </div>
     
@@ -365,7 +383,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/原型/" rel="tag"># 原型</a>
+          
+            <a href="/tags/原型链/" rel="tag"># 原型链</a>
+          
+            <a href="/tags/prototype/" rel="tag"># prototype</a>
+          
+            <a href="/tags/proto/" rel="tag"># _proto_</a>
           
         </div>
       
@@ -378,15 +402,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/16/事件冒泡/" rel="next" title="事件冒泡">
+                <i class="fa fa-chevron-left"></i> 事件冒泡
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/07/hexo+GithubPages搭建博客后如何发博文/" rel="prev" title="hexo+Github Pages搭建博客后如何发博文">
-                hexo+Github Pages搭建博客后如何发博文 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -549,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css实现div垂直水平居中："><span class="nav-number">1.</span> <span class="nav-text">css实现div垂直水平居中：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-margin：auto"><span class="nav-number">1.1.</span> <span class="nav-text">方法一 margin：auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-负margin法"><span class="nav-number">1.2.</span> <span class="nav-text">方法二 负margin法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a></li></ol></div>
             
 
           </div>
