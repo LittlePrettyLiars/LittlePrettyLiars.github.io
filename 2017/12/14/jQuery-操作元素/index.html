@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="事件冒泡," />
+  <meta name="keywords" content="jQuery,Html," />
 
 
 
@@ -69,23 +69,18 @@
 
 
 
-<meta name="description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
-<meta name="keywords" content="事件冒泡">
+<meta name="description" content="jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).rem">
+<meta name="keywords" content="jQuery,Html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件冒泡">
-<meta property="og:url" content="http://yoursite.com/2017/11/16/事件冒泡/index.html">
+<meta property="og:title" content="jQuery选择器操作元素">
+<meta property="og:url" content="http://yoursite.com/2017/12/14/jQuery-操作元素/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta property="og:description" content="jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).rem">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true">
-<meta property="og:updated_time" content="2017-11-17T09:46:20.352Z">
+<meta property="og:updated_time" content="2017-12-14T03:45:54.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事件冒泡">
-<meta name="twitter:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
-<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
+<meta name="twitter:title" content="jQuery选择器操作元素">
+<meta name="twitter:description" content="jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).rem">
 
 
 
@@ -115,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/16/事件冒泡/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/14/jQuery-操作元素/"/>
 
 
 
 
 
-  <title>事件冒泡 | Chloe Guo的博客</title>
+  <title>jQuery选择器操作元素 | Chloe Guo的博客</title>
   
 
 
@@ -258,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/16/事件冒泡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/jQuery-操作元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -275,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">事件冒泡</h1>
+          <h1 class="post-title" itemprop="name headline">jQuery选择器操作元素</h1>
         
 
         <div class="post-meta">
@@ -287,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T17:50:35+08:00">
-                2017-11-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T09:56:03+08:00">
+                2017-12-14
               </time>
             
 
@@ -310,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
                   </a>
                 </span>
 
@@ -347,18 +342,35 @@
       
 
       
-        <p>要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。</p>
-<p><strong>事件冒泡</strong>：  </p>
-<p>事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true" alt="image">  </p>
-<a id="more"></a>
-<p>事件监听的W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。当选择为true时，意味着停止冒泡，对我所产生的行为和我的父元素和祖先元素都没有关系，不要再向上通报他们了。<br>事件冒泡和事件捕获意味着事件触发顺序不同，事件冒泡是从子到父，事件捕获是从父到子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是大头爸爸&apos;);</div><div class="line">	&#125;);</div><div class="line">document.getElementById(&quot;item-1&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是小头儿子&apos;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>结果：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true" alt="image"></p>
-<p>而此时如果我们将useCapture置为true，则两个顺序会反过来，即先执行父元素上事件，后执行子元素上事件。<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true" alt="image"></p>
-<p>但是事件冒泡还是有自己的用武之地，例如就是上面的列表，当每个li被点击时，可能有各种各样的事件发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如实现点击每个li的时候给被选中的li添加‘active’属性，就可以利用这一特性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.active&#123;</div><div class="line">		background: blue;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(&apos;#parent-list&apos;).on(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，给他添加active类</div><div class="line">		$(e.target).addClass(&apos;active&apos;).siblings().removeClass(&apos;active&apos;);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>效果如图所示：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true" alt="image"></p>
-<h4 id="如何阻止事件冒泡"><a href="#如何阻止事件冒泡" class="headerlink" title="如何阻止事件冒泡"></a>如何阻止事件冒泡</h4><p>使用事件对象的 stopPropagation 方法<br>具体用法如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//地址的编辑</div><div class="line">$(document).on(&apos;click&apos;,&apos;.address-update&apos;,function(e)&#123;</div><div class="line">	e.stopPropagation();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+        <h3 id="jquery-操作元素"><a href="#jquery-操作元素" class="headerlink" title="jquery 操作元素"></a>jquery 操作元素</h3><h5 id="常用的有："><a href="#常用的有：" class="headerlink" title="常用的有："></a>常用的有：</h5><ul>
+<li>获取内容<br>$(“#test”).text();<br>$(“#test”).html();<br>$(“#test”).val()</li>
+<li>获取属性<br>$(“#test”).attr(“href”)</li>
+<li>设置或者修改属性<br>$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);<br>$(“#XXX”).removeAttr(“checked”);/$(“.XXX”).removeAttr(“checked”);<h5 id="input-、select在value值变化时可以调用不同的函数"><a href="#input-、select在value值变化时可以调用不同的函数" class="headerlink" title="input 、select在value值变化时可以调用不同的函数"></a>input 、select在value值变化时可以调用不同的函数</h5><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(&quot;#xxx&quot;).change(function()&#123;    </div><div class="line">    var value = $(this).children(&apos;option:selected&apos;).val(); </div><div class="line">    switch (value) &#123;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        XXX；</div><div class="line">        break;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        xxx;</div><div class="line">        break;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        xxx;</div><div class="line">        break;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件"><a href="#onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件" class="headerlink" title="onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件"></a>onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;#xxx&quot;).click(function()&#123;    </div><div class="line">        XXX    </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h5 id="动态加载select选项，并自定义属性"><a href="#动态加载select选项，并自定义属性" class="headerlink" title="动态加载select选项，并自定义属性"></a>动态加载select选项，并自定义属性</h5><ul>
+<li><p>原生javascript</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var SelectObj=document.getElementById(&apos;xxx&apos;); </div><div class="line">SelectObj.options.length=0;//清空select</div><div class="line">var newOption = new Option(文本内容,value值);</div><div class="line">newOption.setAttribute(&quot;自定义属性名&quot;,属性值);</div><div class="line">SelectObj.add(newOption);</div></pre></td></tr></table></figure>
+</li>
+<li><p>jQuery添加option选型，并增加自定义属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;#car&quot;).append(&quot;&lt;option value=&apos;Benz&apos; data-count=&apos;3&apos;&gt;Benz&lt;/option&gt;&quot;)//添加选项在后面</div><div class="line">$(&quot;#car&quot;).prepend(&quot;&lt;option value=&apos;Benz&apos; data-count=&apos;3&apos;&gt;Benz&lt;/option&gt;&quot;)//添加选项在最前面</div><div class="line">$(&quot;#car&quot;).empty();//清空select</div></pre></td></tr></table></figure>
+</li>
+<li><p>jQuery删除option选型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&quot;#car option:last&quot;).remove();  //删除Select中索引值最大Option(最后一个)  </div><div class="line">$(&quot;#car option[index=&apos;0&apos;]&quot;).remove();  //删除Select中索引值为0的Option(第一个)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="不需要自定义属性，直接加option选项"><a href="#不需要自定义属性，直接加option选项" class="headerlink" title="不需要自定义属性，直接加option选项"></a>不需要自定义属性，直接加option选项</h5><ul>
+<li>原生javaScript</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SelectObj.options.add(new Option(text,value));</div></pre></td></tr></table></figure>
+<ul>
+<li>jquery<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;#car&quot;).append(&quot;&lt;option value=&apos;Benz&apos;&gt;Benz&lt;/option&gt;&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="jquery根据value值显示被选中的选项"><a href="#jquery根据value值显示被选中的选项" class="headerlink" title="jquery根据value值显示被选中的选项"></a>jquery根据value值显示被选中的选项</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;#add_dept&quot;).find(&quot;option[value = &apos;&quot;+dept_id+&quot;&apos;]&quot;).attr(&quot;selected&quot;,&quot;selected&quot;);</div></pre></td></tr></table></figure>
+<h5 id="jquery获取select-被选中的value值，文本内容，属性值"><a href="#jquery获取select-被选中的value值，文本内容，属性值" class="headerlink" title="jquery获取select 被选中的value值，文本内容，属性值"></a>jquery获取select 被选中的value值，文本内容，属性值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var dept_id = $(&apos;#add_dept&apos;).val();//获取value值</div><div class="line">var dept =$(&quot;#add_dept option:selected&quot;).text();//获取选中的option文本</div><div class="line">或者也可以是</div><div class="line">$(&quot;#add_dept&quot;).find(&quot;option:selected&quot;).text();</div><div class="line">var domain = $(&quot;#add_dept option:selected&quot;).attr(&quot;data-domin&quot;);//获取自定义属性值</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -376,7 +388,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/事件冒泡/" rel="tag"># 事件冒泡</a>
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+            <a href="/tags/Html/" rel="tag"># Html</a>
           
         </div>
       
@@ -389,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/CSS的圣杯布局、双飞翼布局/" rel="next" title="CSS的圣杯布局、双飞翼布局">
-                <i class="fa fa-chevron-left"></i> CSS的圣杯布局、双飞翼布局
+              <a href="/2017/12/06/JavaScript原型、原型链/" rel="next" title="JavaScript原型、原型链">
+                <i class="fa fa-chevron-left"></i> JavaScript原型、原型链
               </a>
             
           </div>
@@ -398,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/06/JavaScript原型、原型链/" rel="prev" title="JavaScript原型、原型链">
-                JavaScript原型、原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何阻止事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">如何阻止事件冒泡</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery-操作元素"><span class="nav-number">1.</span> <span class="nav-text">jquery 操作元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的有："><span class="nav-number">1.0.1.</span> <span class="nav-text">常用的有：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-、select在value值变化时可以调用不同的函数"><span class="nav-number">1.0.2.</span> <span class="nav-text">input 、select在value值变化时可以调用不同的函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件"><span class="nav-number">1.0.3.</span> <span class="nav-text">onclick是绑定事件，click它本身是一种方法，作用是触发onclick事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态加载select选项，并自定义属性"><span class="nav-number">1.0.4.</span> <span class="nav-text">动态加载select选项，并自定义属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不需要自定义属性，直接加option选项"><span class="nav-number">1.0.5.</span> <span class="nav-text">不需要自定义属性，直接加option选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jquery根据value值显示被选中的选项"><span class="nav-number">1.0.6.</span> <span class="nav-text">jquery根据value值显示被选中的选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jquery获取select-被选中的value值，文本内容，属性值"><span class="nav-number">1.0.7.</span> <span class="nav-text">jquery获取select 被选中的value值，文本内容，属性值</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
