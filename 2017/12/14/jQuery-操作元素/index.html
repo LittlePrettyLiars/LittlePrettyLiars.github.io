@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).">
+<meta name="description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);$(“#XXX”).removeAttr(“checked”);  input 、select在v">
 <meta name="keywords" content="jQuery,Html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery选择器操作元素">
 <meta property="og:url" content="http://yoursite.com/2017/12/14/jQuery-操作元素/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).">
+<meta property="og:description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);$(“#XXX”).removeAttr(“checked”);  input 、select在v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T06:56:32.778Z">
+<meta property="og:updated_time" content="2017-12-14T07:00:12.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery选择器操作元素">
-<meta name="twitter:description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);$(“#XXX”).">
+<meta name="twitter:description" content="1. jquery 操作元素常用的有： 获取内容$(“#test”).text();$(“#test”).html();$(“#test”).val() 获取属性$(“#test”).attr(“href”) 设置或者修改属性$(“#XXX”).attr(“disabled”,”disabled”);$(“#XXX”).removeAttr(“checked”);  input 、select在v">
 
 
 
@@ -345,7 +345,7 @@
         <h3 id="1-jquery-操作元素"><a href="#1-jquery-操作元素" class="headerlink" title="1. jquery 操作元素"></a>1. jquery 操作元素</h3><h5 id="常用的有："><a href="#常用的有：" class="headerlink" title="常用的有："></a>常用的有：</h5><ul>
 <li>获取内容<br>$(“#test”).text();<br>$(“#test”).html();<br>$(“#test”).val()</li>
 <li>获取属性<br>$(“#test”).attr(“href”)</li>
-<li>设置或者修改属性<br>$(“#XXX”).attr(“disabled”,”disabled”);/$(“.XXX”).attr(“disabled”,”disabled”);<br>$(“#XXX”).removeAttr(“checked”);/$(“.XXX”).removeAttr(“checked”);</li>
+<li>设置或者修改属性<br>$(“#XXX”).attr(“disabled”,”disabled”);<br>$(“#XXX”).removeAttr(“checked”);</li>
 </ul>
 <h5 id="input-、select在value值变化时可以调用不同的函数"><a href="#input-、select在value值变化时可以调用不同的函数" class="headerlink" title="input 、select在value值变化时可以调用不同的函数"></a>input 、select在value值变化时可以调用不同的函数</h5><a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(&quot;#xxx&quot;).change(function()&#123;    </div><div class="line">    var value = $(this).children(&apos;option:selected&apos;).val(); </div><div class="line">    switch (value) &#123;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        XXX；</div><div class="line">        break;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        xxx;</div><div class="line">        break;</div><div class="line">    case &apos;xxx&apos;:</div><div class="line">        xxx;</div><div class="line">        break;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
