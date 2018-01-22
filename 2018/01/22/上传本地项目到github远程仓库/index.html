@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="原型,原型链,prototype,_proto_," />
+  <meta name="keywords" content="github," />
 
 
 
@@ -69,22 +69,24 @@
 
 
 
-<meta name="description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
-<meta name="keywords" content="原型,原型链,prototype,_proto_">
+<meta name="description" content="默认条件：  已经安装git 有github账号总体流程   进入到自己项目所在文件夹，默认你已经安装了git ，在文件夹中点击鼠标右键，点击git bash ，打开git命令行； 初始化版本库  1git init 执行该命令后，项目文件夹中会自动创建一个.git文件夹">
+<meta name="keywords" content="github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型、原型链">
-<meta property="og:url" content="http://yoursite.com/2017/12/06/JavaScript原型、原型链/index.html">
+<meta property="og:title" content="上传本地项目到github远程仓库">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/上传本地项目到github远程仓库/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
+<meta property="og:description" content="默认条件：  已经安装git 有github账号总体流程   进入到自己项目所在文件夹，默认你已经安装了git ，在文件夹中点击鼠标右键，点击git bash ，打开git命令行； 初始化版本库  1git init 执行该命令后，项目文件夹中会自动创建一个.git文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/name.png?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/dir.png?raw=true">
-<meta property="og:updated_time" content="2017-12-06T09:14:47.355Z">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/init.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/createRes.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/addressRes.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/problem.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/pull_error.png?raw=true">
+<meta property="og:updated_time" content="2018-01-22T10:02:48.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript原型、原型链">
-<meta name="twitter:description" content="在JavaScipt中，万物皆对象  原型模式 是什么在javaScript中，我们创建的每个函数都有一个prototype(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个对象，这个对象又有一个constructor属性，该属性指向是构造函数；例如：123456function sayHi()&amp;#123;	this.">
-<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true">
+<meta name="twitter:title" content="上传本地项目到github远程仓库">
+<meta name="twitter:description" content="默认条件：  已经安装git 有github账号总体流程   进入到自己项目所在文件夹，默认你已经安装了git ，在文件夹中点击鼠标右键，点击git bash ，打开git命令行； 初始化版本库  1git init 执行该命令后，项目文件夹中会自动创建一个.git文件夹">
+<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/init.png?raw=true">
 
 
 
@@ -114,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/06/JavaScript原型、原型链/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/22/上传本地项目到github远程仓库/"/>
 
 
 
 
 
-  <title>JavaScript原型、原型链 | Chloe Guo的博客</title>
+  <title>上传本地项目到github远程仓库 | Chloe Guo的博客</title>
   
 
 
@@ -257,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/JavaScript原型、原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/上传本地项目到github远程仓库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -274,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript原型、原型链</h1>
+          <h1 class="post-title" itemprop="name headline">上传本地项目到github远程仓库</h1>
         
 
         <div class="post-meta">
@@ -286,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T16:57:29+08:00">
-                2017-12-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T17:55:09+08:00">
+                2018-01-22
               </time>
             
 
@@ -309,8 +311,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/github/" itemprop="url" rel="index">
+                    <span itemprop="name">github</span>
                   </a>
                 </span>
 
@@ -346,26 +348,49 @@
       
 
       
-        <p><strong>在JavaScipt中，万物皆对象</strong> </p>
-<h4 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h4><ul>
-<li><strong>是什么</strong><br>在javaScript中，我们创建的每个函数都有一个<strong>prototype</strong>(原型)属性，换言之，只要创建一个新函数，就会根据一定的规则为函数创建一个prototype属性，叫原型，这个（原型）属性也是一个<strong>对象</strong>，这个对象又有一个<strong>constructor</strong>属性，该属性指向是构造函数；<br>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function sayHi()&#123;</div><div class="line">	this.name = &apos;hello&apos;;</div><div class="line">	this.saySomething = function()&#123;</div><div class="line">		console.log(this.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<a id="more"></a>
-<p>在没有设置这个原型属性的时候，这个原型包含两部分(constructor 和<em>proto</em>),<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(sayHi.prototype);</div></pre></td></tr></table></figure></p>
-<p>结果是：</p>
-<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/default.png?raw=true" alt="image"><br>默认情况下，a.prototype下会带有一个constructor属性，这个属性指向创建当前函数对象的构造函数，在上例中，a.prototype.constructor指向的是sayHi()函数本身</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sayHi.prototype.constructor === sayHi//true</div></pre></td></tr></table></figure>
-<p>我们可以给继续给原型添加属性和方法，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sayHi.prototype.name = &apos;nihao&apos;;</div></pre></td></tr></table></figure>
-<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/name.png?raw=true" alt="image"></p>
+        <p><strong>默认条件</strong>：</p>
 <ul>
-<li><strong>作用</strong><br>用来实现基于原型的集成和属性的共享 （其实到现在还是没有理解使用圆形的好处，以后在应用中用到应该会理解更深刻）</li>
+<li>已经安装git</li>
+<li>有github账号<h5 id="总体流程"><a href="#总体流程" class="headerlink" title="总体流程"></a>总体流程</h5></li>
 </ul>
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>提到原型链，就不得不说<em>proto</em>，<em>proto</em>是任何对象都会有的属性，JavaScript中万物皆对象，所以会构成一条<em>proto</em>连起来的一条链，递归访问<em>proto</em>必须到头，并且值是null<br><em>proto</em>是js内部使用寻找原型链的属性，通过该属性可以允许使用实例对象直接访问原型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">var p = new Person();</div><div class="line">//以前是不能直接使用p直接访问对象原型，现在有了_proto_后，p._proto_可以直接访问对象原型，p.__proto__ === Person.prototype</div></pre></td></tr></table></figure>
-<p>当js引擎查找对象属性，先在对象本身属性中查找，如果没有，就沿着原型链向上查找<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name=name;</div><div class="line">  this.age=age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype=&#123;</div><div class="line">  sayHello:function()&#123;</div><div class="line">    console.log(&quot;你好&quot;+&quot;,&quot;+this.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p =new Person(&quot;尼尔.波兹曼&quot;,19);</div><div class="line">p.sayHello();</div><div class="line">console.dir(p);</div></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/proto/dir.png?raw=true" alt="image"></p>
+<ol>
+<li>进入到自己项目所在文件夹，默认你已经安装了git ，在文件夹中点击鼠标右键，点击git bash ，打开git命令行；</li>
+<li>初始化版本库</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
+<p>执行该命令后，项目文件夹中会自动创建一个.git文件夹<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/init.png?raw=true" alt="image"><br><a id="more"></a></p>
+<ol>
+<li><p>将项目文件扔到缓存区中 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add .</div></pre></td></tr></table></figure>
+</li>
+<li><p>用commit推送代码到本地版本库，并填写提交备注</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m &quot;简单描述&quot;</div></pre></td></tr></table></figure>
+<ol>
+<li>在github上新建仓库，并将本地项目与远程仓库关联起来<br>新建仓库：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/createRes.png?raw=true" alt="image"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://自己的仓库url地址</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>自己仓库地址：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/addressRes.png?raw=true" alt="image"></p>
+<ol>
+<li>步骤4中容易出现的问题及解决办法<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/problem.png?raw=true" alt="image"><br>添加远程github仓库的时候提示错误：fatal: remote origin already exists.<br>解决方法：<br>删除远程仓库：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote rm origin</div></pre></td></tr></table></figure>
+<p>如果这个命令依旧报错，我们可以手动修改git/config文件内容，使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi .git/config</div></pre></td></tr></table></figure>
+<p>删掉[remote “origin”]这一行内容  </p>
+<h5 id="如何退出vim编辑器"><a href="#如何退出vim编辑器" class="headerlink" title="如何退出vim编辑器"></a>如何退出vim编辑器</h5><p>按住esc,两次大写Z即可退出<br>然后再来添加远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://自己的仓库url地址</div></pre></td></tr></table></figure></p>
+<ol>
+<li>将本地项目代码上传github之前，先使用git pull<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin master</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此处可能遇到的问题：<img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/pull_error.png?raw=true" alt="image"><br>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin master --allow-unrelated-histories</div></pre></td></tr></table></figure>
+<ol>
+<li>然后使用git push</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<p>基本的操作到此就结束了</p>
 
       
     </div>
@@ -383,13 +408,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/原型/" rel="tag"># 原型</a>
-          
-            <a href="/tags/原型链/" rel="tag"># 原型链</a>
-          
-            <a href="/tags/prototype/" rel="tag"># prototype</a>
-          
-            <a href="/tags/proto/" rel="tag"># _proto_</a>
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -402,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/16/事件冒泡/" rel="next" title="事件冒泡">
-                <i class="fa fa-chevron-left"></i> 事件冒泡
+              <a href="/2017/12/14/jQuery-操作元素/" rel="next" title="jQuery选择器操作元素">
+                <i class="fa fa-chevron-left"></i> jQuery选择器操作元素
               </a>
             
           </div>
@@ -411,10 +430,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/14/jQuery-操作元素/" rel="prev" title="jQuery选择器操作元素">
-                jQuery选择器操作元素 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型模式"><span class="nav-number">1.</span> <span class="nav-text">原型模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#总体流程"><span class="nav-number">1.</span> <span class="nav-text">总体流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何退出vim编辑器"><span class="nav-number">2.</span> <span class="nav-text">如何退出vim编辑器</span></a></li></ol></div>
             
 
           </div>
