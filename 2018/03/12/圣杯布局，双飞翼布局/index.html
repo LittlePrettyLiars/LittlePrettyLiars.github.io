@@ -80,7 +80,7 @@
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/%E4%B8%89%E6%A0%8F.png?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/shengbei.png?raw=true">
 <meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/shuangfeiyi.png?raw=true">
-<meta property="og:updated_time" content="2018-03-12T06:57:12.415Z">
+<meta property="og:updated_time" content="2018-03-12T07:08:52.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="圣杯布局，双飞翼布局">
 <meta name="twitter:description" content="解决的问题圣杯和双飞翼布局解决的问题一样，都是：左右栏固定，中间自适应的三栏布局。  实现方式共同点两者实现方法前面的思路都是一样的：    中间栏放在前面优先渲染； 中间栏width设为100%； 三栏全部float浮动； 此时的效果因为中间栏设置了100%的宽度，所以是中间栏在上，左右两栏接着中间栏下一行然后紧挨排列，为了使三栏能够同行排列，左右两栏使用负margin值，而两种布局的区别就在于">
@@ -352,7 +352,8 @@
 <li>中间栏放在前面优先渲染；</li>
 <li>中间栏width设为100%；</li>
 <li>三栏全部float浮动；</li>
-<li>此时的效果因为中间栏设置了100%的宽度，所以是中间栏在上，左右两栏接着中间栏下一行然后紧挨排列，为了使三栏能够同行排列，左右两栏使用负margin值，而两种布局的区别就在于如何使中间栏内容不被遮挡。<br><strong>具体来说，左边列设置margin-left值为-100%，右边列设置margin-left值为负的自身宽度值。</strong>  如图所示<img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/%E4%B8%89%E6%A0%8F.png?raw=true" alt="image"><h5 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h5><strong>圣杯布局</strong>：</li>
+<li>此时的效果因为中间栏设置了100%的宽度，所以是中间栏在上，左右两栏接着中间栏下一行然后紧挨排列，为了使三栏能够同行排列，左右两栏使用负margin值，而两种布局的区别就在于如何使中间栏内容不被遮挡。<br><strong>具体来说，左边列设置margin-left值为-100%，右边列设置margin-left值为负的自身宽度值。</strong><a id="more"></a>
+如图所示<img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/%E4%B8%89%E6%A0%8F.png?raw=true" alt="image"><h5 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h5><strong>圣杯布局</strong>：</li>
 <li>中间部分设置左右padding值来空出地方放置左右两栏</li>
 <li>三栏设置position：relative相对定位，然后左列设置left值为负的自身宽度值，右列设置right值为负的自身宽度值<h5 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h5>当中间部分宽度小于两边的时候，通过padding,left,right值没有办法来控制三栏的平衡，所以这种情况布局会乱掉。<h5 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h5>整个容器设置min-width（eg min-width: 700px）<h5 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h5><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/layout/shengbei.png?raw=true" alt="image"><br><strong>代码示例</strong></li>
 </ol>
