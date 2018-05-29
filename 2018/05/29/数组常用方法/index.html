@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javaScript,Array," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="对于前端er来说，javaScript中的数组一定是避不开的，但是数组操作还挺多的，有的还很像，你真的清楚每个方法需要的参数和返回值吗，反正我经常搞混，今天就来整理一下常用的数组处理方法 ，参考廖雪峰 创建数组1.使用Array构造函数12345var arr = new Array();var arr = new Array(20);//预先知道数组要保存的项目数量  var arr = new">
+<meta name="keywords" content="javaScript,Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组常用方法">
+<meta property="og:url" content="http://yoursite.com/2018/05/29/数组常用方法/index.html">
+<meta property="og:site_name" content="Chloe Guo的博客">
+<meta property="og:description" content="对于前端er来说，javaScript中的数组一定是避不开的，但是数组操作还挺多的，有的还很像，你真的清楚每个方法需要的参数和返回值吗，反正我经常搞混，今天就来整理一下常用的数组处理方法 ，参考廖雪峰 创建数组1.使用Array构造函数12345var arr = new Array();var arr = new Array(20);//预先知道数组要保存的项目数量  var arr = new">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-29T09:53:08.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组常用方法">
+<meta name="twitter:description" content="对于前端er来说，javaScript中的数组一定是避不开的，但是数组操作还挺多的，有的还很像，你真的清楚每个方法需要的参数和返回值吗，反正我经常搞混，今天就来整理一下常用的数组处理方法 ，参考廖雪峰 创建数组1.使用Array构造函数12345var arr = new Array();var arr = new Array(20);//预先知道数组要保存的项目数量  var arr = new">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/29/数组常用方法/"/>
+
+
+
+
+
+  <title>数组常用方法 | Chloe Guo的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chloe Guo的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/数组常用方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chloe Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cloud.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chloe Guo的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组常用方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T17:46:53+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于前端er来说，javaScript中的数组一定是避不开的，但是数组操作还挺多的，有的还很像，你真的清楚每个方法需要的参数和返回值吗，反正我经常搞混，今天就来整理一下常用的数组处理方法 ，参考廖雪峰</p>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><h4 id="1-使用Array构造函数"><a href="#1-使用Array构造函数" class="headerlink" title="1.使用Array构造函数"></a>1.使用Array构造函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = new Array();</div><div class="line">var arr = new Array(20);//预先知道数组要保存的项目数量  </div><div class="line">var arr = new Array(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);//也可直接向构造的函数中传递数组中包含的项</div><div class="line">var arr = Array(3); //省略“new”,创建一个包含3项的数组</div><div class="line">var arr = Array(“Greg”);</div></pre></td></tr></table></figure>
+<h4 id="2-使用数组字面量表示法"><a href="#2-使用数组字面量表示法" class="headerlink" title="2.使用数组字面量表示法"></a>2.使用数组字面量表示法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3]；</div><div class="line">var arr = []; //创建空数组</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="获取数组值，使用方括号加数字索引的方法"><a href="#获取数组值，使用方括号加数字索引的方法" class="headerlink" title="获取数组值，使用方括号加数字索引的方法"></a>获取数组值，使用方括号加数字索引的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3];</div><div class="line">console.log(arr[0]); // 1</div></pre></td></tr></table></figure>
+<h3 id="获取array长度，直接访问length属性"><a href="#获取array长度，直接访问length属性" class="headerlink" title="获取array长度，直接访问length属性"></a>获取array长度，直接访问length属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3];</div><div class="line">console.log(arr.length); // 3</div></pre></td></tr></table></figure>
+<h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>确定某个对象是不是数组  </p>
+<h4 id="1-使用instanceof"><a href="#1-使用instanceof" class="headerlink" title="1.使用instanceof"></a>1.使用instanceof</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if(value instanceof Array)&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用instanceof的前提是，假定只有一个全局执行环境。在浏览器中，我们的脚本可能需要在多个窗口之间进行交互。多个窗口意味着多个全局环境，不同的全局环境拥有不同的全局对象，从而拥有不同的内置类型构造函数。这可能会引发一些问题。比如，表达式 [] instanceof window.frames[0].Array 会返回false，因为 Array.prototype !== window.frames[0].Array.prototype（这一段是看书没有看懂，查资料看到的，其实不是很理解，总之如果你也不理解，暂时可以理解为当存在多个全局执行环境时instanceof检测数组会出问题）  </p>
+<h4 id="2-Array-isArray-方法"><a href="#2-Array-isArray-方法" class="headerlink" title="2.Array.isArray()方法"></a>2.Array.isArray()方法</h4><p>为了避免上面的问题，ECMAScript5新增了Array.isArray()方法，这个方法的目的是最终确定这个值到底是不是数组，而不管他是在哪个全局执行环境创建的  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if(Array.isArray(value))&#123;&#125;</div></pre></td></tr></table></figure>
+<p>支持此方法的浏览器：IE9+，Firefox 4+，Safari5+、Opera 10.5+和Chrome  </p>
+<h3 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h3><h4 id="1-toString"><a href="#1-toString" class="headerlink" title="1. toString()"></a>1. toString()</h4><p>把数组转化为字符串，并返回结果，每一项以逗号分割。结果唯一</p>
+<h4 id="2-toLocaleString"><a href="#2-toLocaleString" class="headerlink" title="2. toLocaleString()"></a>2. toLocaleString()</h4><p>把数组根据你机器的本地环境转换为为字符串，并返回结果,常用语返回时间类型数据，结果会因本地环境不同而有所不同</p>
+<h4 id="3-valueOf"><a href="#3-valueOf" class="headerlink" title="3. valueOf()"></a>3. valueOf()</h4><p>返回数组本身<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line">console.log(arr.valueOf()); //(5)[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</div><div class="line">console.log(arr.toString()); //1,2,3,4,5</div><div class="line">console.log(arr.toLocaleString());//1,2,3,4,5</div></pre></td></tr></table></figure></p>
+<h3 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h3><h4 id="1-push"><a href="#1-push" class="headerlink" title="1.push()"></a>1.push()</h4><p>可向数组的末尾添加一个或多个元素，并返回新的长度，数组本身会发生变化<br><strong>语法</strong>array.push(item1, item2, …, itemX)<br><strong>参数</strong>  可添加多个参数，至少有一个<br><strong>返回值</strong>  数组新长度  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line"> console.log(arr.push(&quot;6&quot;)); // 6</div><div class="line">  console.log(arr); // [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;]</div></pre></td></tr></table></figure>
+<h4 id="2-pop"><a href="#2-pop" class="headerlink" title="2.pop()"></a>2.pop()</h4><p>删除数组的最后一个元素并返回删除的元素，此方法会改变数组的长度<br><strong>语法</strong>  array.pop()<br><strong>返回值</strong>  被删除的最后一个元素  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line"> console.log(arr.pop()); // 5</div><div class="line"> console.log(arr); // [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;]</div></pre></td></tr></table></figure>
+<h3 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h3><h4 id="1-shift"><a href="#1-shift" class="headerlink" title="1.shift()"></a>1.shift()</h4><p>把数组的第一个元素从其中删除，并返回第一个元素的值,有点像pop()，此方法会改变数组的长度<br><strong>语法</strong>array.shift()<br><strong>返回值</strong>  被删除的第一个元素的值 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line"> console.log(arr.shift()); // 1</div><div class="line"> console.log(arr); // [&quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</div></pre></td></tr></table></figure>
+<h4 id="2-unshift"><a href="#2-unshift" class="headerlink" title="2.unshift()"></a>2.unshift()</h4><p>可向数组的开头添加一个或更多元素，并返回新的长度,有点像push()<br><strong>语法</strong>array.unshift(item1, item2, …, itemX) <strong>参数</strong>  可添加多个参数，至少有一个<br><strong>返回值</strong> 数组新长度  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line"> console.log(arr.unshift(&quot;6&quot;)); // 6</div><div class="line">  console.log(arr); // [&quot;6&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</div></pre></td></tr></table></figure>
+<h3 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h3><h4 id="1-reverse"><a href="#1-reverse" class="headerlink" title="1.reverse()"></a>1.reverse()</h4><p>颠倒数组中元素的顺序<br><strong>语法</strong>array.reverse()<br><strong>返回值</strong> 颠倒顺序后的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);</div><div class="line"> console.log(arr.reverse()); // [&quot;5&quot;, &quot;4&quot;, &quot;3&quot;, &quot;2&quot;, &quot;1&quot;]</div></pre></td></tr></table></figure></p>
+<h4 id="2-sort"><a href="#2-sort" class="headerlink" title="2.sort()"></a>2.sort()</h4><p>对数组的元素进行排序<br><strong>语法</strong>array.sort(sortby)<br><strong>参数</strong>  可选。规定排序顺序。必须是函数。<br><strong>返回值</strong> 排序后的新数组 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> var arr = new Array(&quot;3&quot;,&quot;19&quot;,&quot;5&quot;,&quot;1&quot;,&quot;2&quot;);</div><div class="line"> var array = [&quot;George&quot;,&quot;John&quot;,&quot;Thomas&quot;,&quot;James&quot;,&quot;Adrew&quot;,&quot;Martin&quot;]</div><div class="line">  function sortSec(a,b)&#123;</div><div class="line">    return a - b;</div><div class="line"> &#125;</div><div class="line"> console.log(arr.sort()); //[&quot;1&quot;, &quot;19&quot;, &quot;2&quot;, &quot;3&quot;, &quot;5&quot;]</div><div class="line"> console.log(arr.sort(sortSec)); //[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;5&quot;, &quot;19&quot;]</div><div class="line"> console.log(array.sort()); //[&quot;Adrew&quot;, &quot;George&quot;, &quot;James&quot;, &quot;John&quot;, &quot;Martin&quot;, &quot;Thomas&quot;]</div><div class="line">```  </div><div class="line">### 操作方法  </div><div class="line">#### 1.concat()</div><div class="line">连接两个或多个数组,该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本</div><div class="line">**语法**array.concat(arrayX,arrayX,......,arrayX)  </div><div class="line">**参数**  必需,该参数可以是具体的值，也可以是数组对象,可以是任意多个。  </div><div class="line">**返回值** 返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 array 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而不是数组</div></pre></td></tr></table></figure>
+<p> var arr = new Array(“3”,”19”,”5”,”1”,”2”);<br> var array = [“George”,”John”,”Thomas”,”James”,”Adrew”,”Martin”]<br> console.log(arr.concat(array));// [“3”, “19”, “5”, “1”, “2”, “George”, “John”, “Thomas”, “James”, “Adrew”, “Martin”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#### 2.slice()</div><div class="line">从已有的数组中返回选定的元素,是当前数组的子数组</div><div class="line">**语法**array.slice(start,end)</div><div class="line">**参数** </div><div class="line"></div><div class="line">参数 | 描述</div><div class="line">---|---</div><div class="line">start | 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推</div><div class="line">end | 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素</div><div class="line"></div><div class="line">**返回值** 返回一个新的数组，包含从 start 到 end （不包括该元素）的 array 中的元素。</div></pre></td></tr></table></figure></p>
+<p> var arr = new Array(“3”,”19”,”5”,”1”,”2”);<br> console.log(arr.slice(1));//[“19”, “5”, “1”, “2”]<br> console.log(arr.slice(1,-1));//[“19”, “5”, “1”]<br> console.log(arr.slice(1,4)); //[“19”, “5”, “1”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#### 3.splice()</div><div class="line">从数组中添加/删除项目，然后返回被删除的项目,该方法会改变原始数组</div><div class="line">**语法**array.splice(index,howmany,item1,.....,itemX)</div><div class="line">**参数**  </div><div class="line"></div><div class="line">参数 | 描述</div><div class="line">---|---</div><div class="line">index| 必需，整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置</div><div class="line">howmany | 必需。要删除的项目数量。如果设置为 0，则不会删除项目如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。</div><div class="line">item1, ..., itemX | 可选。向数组添加的新项目。</div><div class="line"></div><div class="line">**返回值** 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组</div></pre></td></tr></table></figure></p>
+<p> var arr = new Array(“0”,”1”,”2”,”3”,”4”,”5”);<br>  console.log(arr.splice(0,2));//[“0”, “1”]<br>  console.log(arr); //[“2”, “3”, “4”, “5”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p> var arr = new Array(“0”,”1”,”2”,”3”,”4”,”5”);<br>  console.log(arr.splice(1));//[“1”, “2”, “3”, “4”, “5”]<br>  console.log(arr);//[“0”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p> var arr = new Array(“0”,”1”,”2”,”3”,”4”,”5”);<br> console.log(arr.splice(2,0,”6”,”6”,”6”));//[]空数组<br> console.log(arr);//[“0”, “1”, “6”, “6”, “6”, “2”, “3”, “4”, “5”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 位置方法  </div><div class="line">#### 1.indexOf()</div><div class="line">返回某个指定的字符串值在数组中首次出现的位置，从数组的开头(位置0)开始向后找</div><div class="line">**语法**aarray.indexOf(item,start)</div><div class="line">**参数**  </div><div class="line">参数 | 描述</div><div class="line">---|---</div><div class="line">item | 必须。查找的元素</div><div class="line">start | 可选的整数参数，规定在数组中开始检索的位置。它的合法取值是 0 到 array.length - 1。如省略该参数，则将从字符串的首字符开始检索</div><div class="line">**返回值** 元素在数组中的位置,如果没有搜索到则返回 -1</div></pre></td></tr></table></figure></p>
+<p>var arr = new Array(“0”,”1”,”2”,”3”,”4”,”5”);<br> console.log(arr.indexOf(“5”)); //5<br> console.log(arr.indexOf(“5”,1)); //5<br> console.log(arr.indexOf(“6”)); //-1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#### 2.lastIndexOf()</div><div class="line">返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索</div><div class="line">**语法**array.lastIndexOf(item,start)</div><div class="line">**参数**    </div><div class="line">参数 | 描述</div><div class="line">---|---</div><div class="line">item | 必须。查找的元素</div><div class="line">start | 可选的整数参数，规定在数组中开始检索的位置。它的合法取值是 0 到 array.length - 1。如省略该参数，则将从字符串的最后一个字符处开始检索</div><div class="line">**返回值** 返回的是出现的最后一个 searchvalue 的位置</div></pre></td></tr></table></figure>
+<p> var arr = new Array(“0”,”1”,”2”,”5”,”3”,”4”,”5”);<br>  console.log(arr.lastIndexOf(“5”)); //6<br>  console.log(arr.lastIndexOf(“5”,4)); //3<br>```  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+          
+            <a href="/tags/Array/" rel="tag"># Array</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/19/$(document).ready()与window.onload的区别/" rel="next" title=".ready（）与window.onload的区别">
+                <i class="fa fa-chevron-left"></i> .ready（）与window.onload的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/密码体制（加密算法/" rel="prev" title="密码体制（加密算法">
+                密码体制（加密算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/cloud.jpg"
+              alt="Chloe Guo" />
+          
+            <p class="site-author-name" itemprop="name">Chloe Guo</p>
+            <p class="site-description motion-element" itemprop="description">Just going go going go going go</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LittlePrettyLiars" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://gitee.com/ChloeGuo" target="_blank" title="码云">
+                  
+                    <i class="fa fa-fw fa-globe"></i>码云</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/2576759931/home?wvr=5#_loginLayer_1506136123200" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/cherry-75-87" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数组"><span class="nav-number">1.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用Array构造函数"><span class="nav-number">1.1.</span> <span class="nav-text">1.使用Array构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用数组字面量表示法"><span class="nav-number">1.2.</span> <span class="nav-text">2.使用数组字面量表示法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数组值，使用方括号加数字索引的方法"><span class="nav-number">2.</span> <span class="nav-text">获取数组值，使用方括号加数字索引的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取array长度，直接访问length属性"><span class="nav-number">3.</span> <span class="nav-text">获取array长度，直接访问length属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测数组"><span class="nav-number">4.</span> <span class="nav-text">检测数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用instanceof"><span class="nav-number">4.1.</span> <span class="nav-text">1.使用instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Array-isArray-方法"><span class="nav-number">4.2.</span> <span class="nav-text">2.Array.isArray()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转换方法"><span class="nav-number">5.</span> <span class="nav-text">转换方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-toString"><span class="nav-number">5.1.</span> <span class="nav-text">1. toString()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-toLocaleString"><span class="nav-number">5.2.</span> <span class="nav-text">2. toLocaleString()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-valueOf"><span class="nav-number">5.3.</span> <span class="nav-text">3. valueOf()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈方法"><span class="nav-number">6.</span> <span class="nav-text">栈方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-push"><span class="nav-number">6.1.</span> <span class="nav-text">1.push()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-pop"><span class="nav-number">6.2.</span> <span class="nav-text">2.pop()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列方法"><span class="nav-number">7.</span> <span class="nav-text">队列方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-shift"><span class="nav-number">7.1.</span> <span class="nav-text">1.shift()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-unshift"><span class="nav-number">7.2.</span> <span class="nav-text">2.unshift()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重排序方法"><span class="nav-number">8.</span> <span class="nav-text">重排序方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-reverse"><span class="nav-number">8.1.</span> <span class="nav-text">1.reverse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-sort"><span class="nav-number">8.2.</span> <span class="nav-text">2.sort()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chloe Guo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
