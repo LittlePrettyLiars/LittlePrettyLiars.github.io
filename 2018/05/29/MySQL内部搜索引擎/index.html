@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="事件冒泡," />
+  <meta name="keywords" content="mysql,内部搜索引擎," />
 
 
 
@@ -69,23 +69,21 @@
 
 
 
-<meta name="description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
-<meta name="keywords" content="事件冒泡">
+<meta name="description" content="什么是存储引擎关系数据表是用于存储和组织信息的数据结构，可以将表理解为由行和列组成的表格，类似于excel的电子表格的形式。有的表简单，有的表复杂，有的表根本不用来存储任何长期的数据，有的表读取时非常快，但是插入数据时很差；而在我们实际开发过程中，就可能需要各种各样的表，不同的表，就意味着存储不同类型的数据，数据的处理上也会存在着差异。对于MySQL来说，它提供了很多种类型的存储引擎，我们可以根据">
+<meta name="keywords" content="mysql,内部搜索引擎">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件冒泡">
-<meta property="og:url" content="http://yoursite.com/2017/11/16/事件冒泡/index.html">
+<meta property="og:title" content="MySQL内部搜索引擎">
+<meta property="og:url" content="http://yoursite.com/2018/05/29/MySQL内部搜索引擎/index.html">
 <meta property="og:site_name" content="Chloe Guo的博客">
-<meta property="og:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
+<meta property="og:description" content="什么是存储引擎关系数据表是用于存储和组织信息的数据结构，可以将表理解为由行和列组成的表格，类似于excel的电子表格的形式。有的表简单，有的表复杂，有的表根本不用来存储任何长期的数据，有的表读取时非常快，但是插入数据时很差；而在我们实际开发过程中，就可能需要各种各样的表，不同的表，就意味着存储不同类型的数据，数据的处理上也会存在着差异。对于MySQL来说，它提供了很多种类型的存储引擎，我们可以根据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true">
-<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true">
-<meta property="og:updated_time" content="2018-01-29T01:55:55.755Z">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/InnoDB.png?raw=true">
+<meta property="og:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/engines.jpg?raw=true">
+<meta property="og:updated_time" content="2018-05-29T10:02:27.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事件冒泡">
-<meta name="twitter:description" content="要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。 事件冒泡：   事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素">
-<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true">
+<meta name="twitter:title" content="MySQL内部搜索引擎">
+<meta name="twitter:description" content="什么是存储引擎关系数据表是用于存储和组织信息的数据结构，可以将表理解为由行和列组成的表格，类似于excel的电子表格的形式。有的表简单，有的表复杂，有的表根本不用来存储任何长期的数据，有的表读取时非常快，但是插入数据时很差；而在我们实际开发过程中，就可能需要各种各样的表，不同的表，就意味着存储不同类型的数据，数据的处理上也会存在着差异。对于MySQL来说，它提供了很多种类型的存储引擎，我们可以根据">
+<meta name="twitter:image" content="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/InnoDB.png?raw=true">
 
 
 
@@ -115,13 +113,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/16/事件冒泡/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/29/MySQL内部搜索引擎/"/>
 
 
 
 
 
-  <title>事件冒泡 | Chloe Guo的博客</title>
+  <title>MySQL内部搜索引擎 | Chloe Guo的博客</title>
   
 
 
@@ -258,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/16/事件冒泡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/MySQL内部搜索引擎/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -275,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">事件冒泡</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL内部搜索引擎</h1>
         
 
         <div class="post-meta">
@@ -287,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T17:50:35+08:00">
-                2017-11-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T18:00:23+08:00">
+                2018-05-29
               </time>
             
 
@@ -310,8 +308,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/mysql-数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql,数据库</span>
                   </a>
                 </span>
 
@@ -347,18 +345,48 @@
       
 
       
-        <p>要想了解jQuery中事件委托，我们首先需要了解事件冒泡的原理。</p>
-<p><strong>事件冒泡</strong>：  </p>
-<p>事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上，例如当点击某个事件时，处理该事件的函数并不在刚点击的事件源上，他就会向上冒泡到他的父级元素或祖先元素<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/bubble.jpg?raw=true" alt="image">  </p>
-<a id="more"></a>
-<p>事件监听的W3C规范<br>语法：<br>element.addEventListener(event, function, useCapture)<br>event : （必需）事件名，支持所有 DOM事件 ；<br>function：（必需）指定要事件触发时执行的函数；<br>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。当选择为true时，意味着停止冒泡，对我所产生的行为和我的父元素和祖先元素都没有关系，不要再向上通报他们了。<br>事件冒泡和事件捕获意味着事件触发顺序不同，事件冒泡是从子到父，事件捕获是从父到子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">// 找到父元素，添加监听器...</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是大头爸爸&apos;);</div><div class="line">	&#125;);</div><div class="line">document.getElementById(&quot;item-1&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</div><div class="line">		alert(&apos;我是小头儿子&apos;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>结果：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/false.gif?raw=true" alt="image"></p>
-<p>而此时如果我们将useCapture置为true，则两个顺序会反过来，即先执行父元素上事件，后执行子元素上事件。<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/true.gif?raw=true" alt="image"></p>
-<p>但是事件冒泡还是有自己的用武之地，例如就是上面的列表，当每个li被点击时，可能有各种各样的事件发生，如果我们对每一个子元素都进行监听，有时这些元素还会有删除新增，会比较麻烦，而使用事件委托，这件事就会变得比较简单。<br>例如实现点击每个li的时候给被选中的li添加‘active’属性，就可以利用这一特性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.active&#123;</div><div class="line">		background: blue;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul id=&quot;parent-list&quot;&gt;</div><div class="line">	&lt;li id=&quot;item-1&quot;&gt;Item 1&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-2&quot;&gt;Item 2&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-3&quot;&gt;Item 3&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-4&quot;&gt;Item 4&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-5&quot;&gt;Item 5&lt;/li&gt;</div><div class="line">	&lt;li id=&quot;item-6&quot;&gt;Item 6&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(&apos;#parent-list&apos;).on(&quot;click&quot;,function(e) &#123;</div><div class="line">	// e.target是被点击的元素!</div><div class="line">	// 如果被点击的是li元素</div><div class="line">	if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;) &#123;</div><div class="line">		// 找到目标，给他添加active类</div><div class="line">		$(e.target).addClass(&apos;active&apos;).siblings().removeClass(&apos;active&apos;);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>效果如图所示：<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/jqueryEvent/active.png?raw=true" alt="image"></p>
-<h4 id="如何阻止事件冒泡"><a href="#如何阻止事件冒泡" class="headerlink" title="如何阻止事件冒泡"></a>如何阻止事件冒泡</h4><p>使用事件对象的 stopPropagation 方法<br>具体用法如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//地址的编辑</div><div class="line">$(document).on(&apos;click&apos;,&apos;.address-update&apos;,function(e)&#123;</div><div class="line">	e.stopPropagation();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+        <h3 id="什么是存储引擎"><a href="#什么是存储引擎" class="headerlink" title="什么是存储引擎"></a>什么是存储引擎</h3><p>关系数据表是用于存储和组织信息的数据结构，可以将表理解为由行和列组成的表格，类似于excel的电子表格的形式。有的表简单，有的表复杂，有的表根本不用来存储任何长期的数据，有的表读取时非常快，但是插入数据时很差；而在我们实际开发过程中，就可能需要各种各样的表，不同的表，就意味着存储不同类型的数据，数据的处理上也会存在着差异。<br>对于MySQL来说，它提供了很多种类型的存储引擎，我们可以根据对数据处理的需求，选择不同的存储引擎，从而最大限度的利用MySQL强大的功能。<br>mysql5.5以后，默认使用InnoDB搜索引擎  若要修改默认引擎，可以修改配置文件中的default-storage-engine。<br>可以通过show variables like ‘default_storage_engine’,查看当前数据库的默认引擎。<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/InnoDB.png?raw=true" alt="image"><br><a id="more"></a><br>命令：show engines和show variables like ‘have%’可以列出当前数据库支持的引擎，其中value显示为disabled的记录表示数据库支持此引擎，而在数据库启动时被禁用。在MySQL5.1以后，information_chema数据库中存在一个engines的表，它提供的信息与show engines语句完全一样，可以使用下面语句来查询存储引擎支持哪些事务处理：select engine from information_chema.engines where transactions=’yes’<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/engines.jpg?raw=true" alt="image"><br>可以通过engine关键字在创建或修改数据库时指定所使用到的引擎<br>在创建表的时候通过engine=…或type=…来指定所使用到的引擎。show table status from DBname来查看指定表到引擎<br>主要搜索引擎：MyISAM,InnoDB,MEMORY和MERGE</p>
+<h4 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h4><p>MyISAM是独立于操作系统的，这说明可以轻松地将其从windows服务器移植到Linux服务器；每当我们建立一个MyISAM引擎的表时，就会在本地磁盘上建立三个文件，文件名就是表名，例如建立一个MyISAM引擎的tb_Demo表，就会生成以下三个文件：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tb_demo.frm</td>
+<td>存储表定义</td>
+</tr>
+<tr>
+<td>tb_demo.MYD</td>
+<td>存储数据</td>
+</tr>
+<tr>
+<td>tb_demo.MYI</td>
+<td>存储索引</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不适用场景：</strong>MyISAM表无法处理事务，这就意味着有事务处理需求的表，不能使用MyISAM存储引擎。<br><strong>适用场景</strong>：  </p>
+<ul>
+<li>选择密集型的表。MyISAM存储引擎在筛选大量数据时非常迅速，这是他最突出的优点</li>
+<li>插入密集型的表。MyISAM的并发插入特性允许同时选择和插入数据。例如：MyISAM存储引擎很适合管理邮件或者web服务器日志数据。<h3 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h3>InnoDB是一个健壮的事务性存储引擎，这种存储引擎已经被很多互联网公司使用，为用户操作非常大的数据存储提供了一个强大的解决方案。<br>InnoDB 还引入了行级锁定和外键约束，在以下场合中使用InnoDB是最理想的选择。</li>
+<li>更新密集的表，他特别适合处理多重并发的更新请求</li>
+<li>事务，innoDB存储引擎是支持事务的标准mySQL存储引擎</li>
+<li>自动灾难恢复，与其他存储引擎不同，innodb能自动从灾难中恢复</li>
+<li>外键约束，mysql支持外键的存储引擎只有innoDB</li>
+<li>支持自动增加列AUTO_INCREMENT属性<br>一般来说，如果需要事务支持，并且有较高的并发读取效率，InnoDB是不错的选择。<h4 id="MEMORY"><a href="#MEMORY" class="headerlink" title="MEMORY"></a>MEMORY</h4>使用 MySQL Memory存储引擎的出发点是速度。为得到最快的响应时间，采用的逻辑存储介质是系统内存。虽然在内存中存储表数据确实会提高很高的性能，但当mysqld守护进程崩溃时，所有memory数据都会丢失。获得速度的同时也会带来一些缺陷。他要求存储在memory数据表里的数据使用的长度不变的格式，这意外着不能使用BLOB和TEXT这样的长度可变的数据类型，VARCHAR是一种长度可变的类型，但因为它在MySQL内部当作长度固定不变的CHAR类型，所以可以使用。<br>一般在以下几种情况使用Memory存储引擎：</li>
+<li>目标数据较小，而且被频繁的访问。在内存中存放数据，所以会造成内存的使用，可以通过参数max_heap_table_size控制Memory表的大小，设置此参数，就可以限制Memory表的最大大小；</li>
+<li>如果数据是临时的，而且要求立即可用，就可以存放在内存表中</li>
+<li>存储在Memory表中的数据如果突然丢失，不会对应用服务产生实质的负面影响</li>
+<li>Memory同时支持散列索引和B树索引。B树索引的优于散列索引的是，可以使用部分查询和通配查询，也可以使用&lt;、&gt;和&gt;=等操作符方便数据挖掘。散列索引进行“相等比较”非常快，但是对“范围比较”的速度就慢多了，因此散列索引值适合使用在=和&lt;&gt;的操作符中，不适合在&lt;或&gt;操作符中，也同样不适合用在order by子句中  <h4 id="MERGE"><a href="#MERGE" class="headerlink" title="MERGE"></a>MERGE</h4>MERGE 存储引擎是一组MyISAM表的组合，这些MyISAM表结构必须完全相同，尽管其使用不如其他引擎突出，但是某些情况下非常有用，说白了，merge表就是几个相同MyISAM表的聚合器<br>Merge表中并没有数据，对merge类型的表可以进行查询、更新、删除操作，这些操作实际上是对内部的MyISAM表进行操作。<br>Merge存储引擎的使用场景<br>对于服务器日志这种信息，一般常用的存储策略是将数据分成很多表，每个名称与特定的时间段相关。例如，可以用12个相同的表来存储服务器日志数据，每个表对应各个月份的名字来命名，当有必要基于所有12个日志表的数据生成报表，这意味着需要编写并更新多表查询，以反映这些表中的信息。与其编写这些可能出现错误的查询，不如将这些表合并起来使用一条查询，之后再删除Merge表，而不影响原来的数据，删除merge表知识删除merge表的定义，对内部的表没有任何影响<br><strong>ARCHIVE  </strong><br>Archive+是归档的意思，在归档之后很多高级功能就不再支持了，仅仅支持最基本的插入和查询两种功能。MySQL5.5版以前，Archive是不支持索引，但是在MySQL5.5以后的版本中就开始支持索引了<br>Archive拥有很好的压缩机制，它使用zlib压缩库，在记录被请求时会实时压缩，所以它经常被用来当做仓库使用。  <h4 id="如何使用合适的存储引擎？"><a href="#如何使用合适的存储引擎？" class="headerlink" title="如何使用合适的存储引擎？"></a>如何使用合适的存储引擎？</h4></li>
+<li>是否需要支持事务</li>
+<li>是否需要使用热备</li>
+<li>崩溃恢复：能否接受崩溃</li>
+<li>是否需要外键支持</li>
+</ul>
 
       
     </div>
@@ -376,7 +404,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/事件冒泡/" rel="tag"># 事件冒泡</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/内部搜索引擎/" rel="tag"># 内部搜索引擎</a>
           
         </div>
       
@@ -389,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/CSS的圣杯布局、双飞翼布局/" rel="next" title="CSS的圣杯布局、双飞翼布局">
-                <i class="fa fa-chevron-left"></i> CSS的圣杯布局、双飞翼布局
+              <a href="/2018/05/29/密码体制（加密算法/" rel="next" title="密码体制（加密算法）">
+                <i class="fa fa-chevron-left"></i> 密码体制（加密算法）
               </a>
             
           </div>
@@ -398,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/06/JavaScript原型、原型链/" rel="prev" title="JavaScript原型、原型链">
-                JavaScript原型、原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何阻止事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">如何阻止事件冒泡</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是存储引擎"><span class="nav-number">1.</span> <span class="nav-text">什么是存储引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyISAM："><span class="nav-number">1.1.</span> <span class="nav-text">MyISAM：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InnoDB"><span class="nav-number">2.</span> <span class="nav-text">InnoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MEMORY"><span class="nav-number">2.1.</span> <span class="nav-text">MEMORY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MERGE"><span class="nav-number">2.2.</span> <span class="nav-text">MERGE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用合适的存储引擎？"><span class="nav-number">2.3.</span> <span class="nav-text">如何使用合适的存储引擎？</span></a></li></ol></li></ol></div>
             
 
           </div>
