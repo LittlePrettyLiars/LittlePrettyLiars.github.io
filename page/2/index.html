@@ -252,6 +252,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/日期转换的那些事儿/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chloe Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cloud.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chloe Guo的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/15/日期转换的那些事儿/" itemprop="url">日期转换的那些事儿</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T09:58:13+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaScript-php/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript,php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="JavaScript中日期转换"><a href="#JavaScript中日期转换" class="headerlink" title="JavaScript中日期转换"></a>JavaScript中日期转换</h3><h4 id="日期字符串转时间戳"><a href="#日期字符串转时间戳" class="headerlink" title="日期字符串转时间戳"></a>日期字符串转时间戳</h4><p>获取当前时间戳，使用new Date()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var timestamps = new Date(); //Mon May 14 2018 22:17:38 GMT+0800 (中国标准时间)</div><div class="line">timestamps.getFullYear() //2018 获取年</div><div class="line">timestamps.getMonth() +1 // 5 获取月份  此处需要+1，因为js中从0开始算月，0就是1月，1就是2月</div><div class="line">timestamps.getDate() // 14 获取日</div></pre></td></tr></table></figure>
+<p>如果想将当前时间转换成字符串，可以使用两个函数</p>
+<ul>
+<li>toLocaleString()  //获取的是本地时间字符串，但是因为月份日期“0”不显示，位数不固定，需要截取的话，只获取年月日，可以用正则，而且不同浏览器下转换格式不同</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timestamps.toLocaleString() //2018/5/14 下午10:23:46（chrome）</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/15/日期转换的那些事儿/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -355,7 +507,7 @@
 <li>form中enctype中有三种取值
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/#espandi" rel="contents">
+            <a class="btn" href="/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -507,7 +659,7 @@
 <li>此时的效果因为中间栏设置了100%的宽度，所以是中间栏在上，左右两栏接着中间栏下一行然后紧挨排列，为了使三栏能够同行排列，左右两栏使用负margin值，而两种布局的区别就在于如何使中间栏内容不被遮挡。<br><strong>具体来说，左边列设置margin-left值为-100%，右边列设置margin-left值为负的自身宽度值。</strong>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/12/圣杯布局，双飞翼布局/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/12/圣杯布局，双飞翼布局/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -654,7 +806,7 @@
 <h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>自定义 toString（或者 valueOf）方法，每次调用改变一次返回值，从而满足判断条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const a = &#123;</div><div class="line">  i: 1,</div><div class="line">  toString: function () &#123;</div><div class="line">    return a.i++;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) &#123;</div><div class="line">  console.log(&apos;Hello World!&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/29/在-JavaScript-中，-a-1-a-2-a-3-是否有可能为-true/#espandi" rel="contents">
+            <a class="btn" href="/2018/01/29/在-JavaScript-中，-a-1-a-2-a-3-是否有可能为-true/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -810,158 +962,7 @@
 <p>执行该命令后，项目文件夹中会自动创建一个.git文件夹<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/init.png?raw=true" alt="image"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/22/上传本地项目到github远程仓库/#espandi" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/jQuery-操作元素/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chloe Guo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/cloud.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chloe Guo的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/jQuery-操作元素/" itemprop="url">jQuery选择器操作元素</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T09:56:03+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">jQuery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-jquery-操作元素"><a href="#1-jquery-操作元素" class="headerlink" title="1. jquery 操作元素"></a>1. jquery 操作元素</h3><h5 id="常用的有："><a href="#常用的有：" class="headerlink" title="常用的有："></a>常用的有：</h5><ul>
-<li>获取内容<br>$(“#test”).text();<br>$(“#test”).html();<br>$(“#test”).val()</li>
-<li>获取属性<br>$(“#test”).attr(“href”)</li>
-<li>设置或者修改属性<br>$(“#XXX”).attr(“disabled”,”disabled”);<br>$(“#XXX”).removeAttr(“checked”);</li>
-</ul>
-<h5 id="input-、select在value值变化时可以调用不同的函数"><a href="#input-、select在value值变化时可以调用不同的函数" class="headerlink" title="input 、select在value值变化时可以调用不同的函数"></a>input 、select在value值变化时可以调用不同的函数</h5>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/jQuery-操作元素/#espandi" rel="contents">
+            <a class="btn" href="/2018/01/22/上传本地项目到github远程仓库/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1052,7 +1053,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1063,7 +1064,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1074,7 +1075,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
