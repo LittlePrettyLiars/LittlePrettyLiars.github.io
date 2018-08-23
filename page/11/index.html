@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/上传本地项目到github远程仓库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/在-JavaScript-中，-a-1-a-2-a-3-是否有可能为-true/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/22/上传本地项目到github远程仓库/" itemprop="url">上传本地项目到github远程仓库</a></h1>
+                <a class="post-title-link" href="/2018/01/29/在-JavaScript-中，-a-1-a-2-a-3-是否有可能为-true/" itemprop="url">在 JavaScript 中， (a ==1 && a== 2 && a==3) 是否有可能为 true</a></h1>
         
 
         <div class="post-meta">
@@ -317,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T17:55:09+08:00">
-                2018-01-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T09:44:48+08:00">
+                2018-01-29
               </time>
             
 
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/github/" itemprop="url" rel="index">
-                    <span itemprop="name">github</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -378,20 +378,11 @@
 
       
         
-          <p><strong>默认条件</strong>：</p>
-<ul>
-<li>已经安装git</li>
-<li>有github账号<h5 id="总体流程"><a href="#总体流程" class="headerlink" title="总体流程"></a>总体流程</h5></li>
-</ul>
-<ol>
-<li>进入到自己项目所在文件夹，默认你已经安装了git ，在文件夹中点击鼠标右键，点击git bash ，打开git命令行；</li>
-<li>初始化版本库</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
-<p>执行该命令后，项目文件夹中会自动创建一个.git文件夹<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/remote/init.png?raw=true" alt="image"><br>
+          <p>这是最近国外一个求职者在面试时被问到的问题，虽然看到这个问题的时候就想到答案是”yes”,因为在 JavaScript 中，两个”==”是松散相等运算符，所以肯定是有一种方法最后使这个式子为true,但是真的自己写又不会了，就从别处学习了一下别人怎么写：</p>
+<h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>自定义 toString（或者 valueOf）方法，每次调用改变一次返回值，从而满足判断条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const a = &#123;</div><div class="line">  i: 1,</div><div class="line">  toString: function () &#123;</div><div class="line">    return a.i++;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) &#123;</div><div class="line">  console.log(&apos;Hello World!&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/22/上传本地项目到github远程仓库/#more" rel="contents">
+            <a class="btn" href="/2018/01/29/在-JavaScript-中，-a-1-a-2-a-3-是否有可能为-true/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -435,7 +426,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -484,7 +475,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -495,7 +486,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -506,7 +497,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/密码体制（加密算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/MySQL内部搜索引擎/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/29/密码体制（加密算法/" itemprop="url">密码体制（加密算法）</a></h1>
+                <a class="post-title-link" href="/2018/05/29/MySQL内部搜索引擎/" itemprop="url">MySQL内部搜索引擎</a></h1>
         
 
         <div class="post-meta">
@@ -317,7 +317,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T17:47:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T18:00:23+08:00">
                 2018-05-29
               </time>
             
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全/" itemprop="url" rel="index">
-                    <span itemprop="name">安全</span>
+                  <a href="/categories/mysql-数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql,数据库</span>
                   </a>
                 </span>
 
@@ -378,11 +378,10 @@
 
       
         
-          <p>密码体制分类方法有三种：<br>根据密码算法所用的密钥数量一般分为两类：非对称密码体制，对称密码体制<br>根据对明文信息的处理方式可将对称密码体制分为分组密码（DES、AES、IDEA、RC6）和序列密码（RC4、A5、SEAL）<br>根据是否能进行可逆的加密变换可以分为单项函数密码体制（MD4、MD5、SHA-1）和双向变换密码体制</p>
-<h3 id="对称密码体制"><a href="#对称密码体制" class="headerlink" title="对称密码体制"></a>对称密码体制</h3><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>对一个提供保密服务的密码系统，他的加密密钥和解密密钥相同，或者虽然不相同，但是其中一个的任意一个可以很容易的导出另外一个，那么这个系统采用的就是对称密钥体制<br>
+          <h3 id="什么是存储引擎"><a href="#什么是存储引擎" class="headerlink" title="什么是存储引擎"></a>什么是存储引擎</h3><p>关系数据表是用于存储和组织信息的数据结构，可以将表理解为由行和列组成的表格，类似于excel的电子表格的形式。有的表简单，有的表复杂，有的表根本不用来存储任何长期的数据，有的表读取时非常快，但是插入数据时很差；而在我们实际开发过程中，就可能需要各种各样的表，不同的表，就意味着存储不同类型的数据，数据的处理上也会存在着差异。<br>对于MySQL来说，它提供了很多种类型的存储引擎，我们可以根据对数据处理的需求，选择不同的存储引擎，从而最大限度的利用MySQL强大的功能。<br>mysql5.5以后，默认使用InnoDB搜索引擎  若要修改默认引擎，可以修改配置文件中的default-storage-engine。<br>可以通过show variables like ‘default_storage_engine’,查看当前数据库的默认引擎。<br><img src="https://github.com/LittlePrettyLiars/glowing-waffle/blob/master/mysql/InnoDB.png?raw=true" alt="image"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/29/密码体制（加密算法/#more" rel="contents">
+            <a class="btn" href="/2018/05/29/MySQL内部搜索引擎/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -426,7 +425,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -475,7 +474,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -486,7 +485,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -497,7 +496,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

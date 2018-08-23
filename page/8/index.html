@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/日期转换的那些事儿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chloe Guo">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/" itemprop="url">如何在客户端上传shell脚本文件，并利用PHP调用执行脚本</a></h1>
+                <a class="post-title-link" href="/2018/05/15/日期转换的那些事儿/" itemprop="url">日期转换的那些事儿</a></h1>
         
 
         <div class="post-meta">
@@ -317,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T17:49:16+08:00">
-                2018-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T09:58:13+08:00">
+                2018-05-15
               </time>
             
 
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
+                  <a href="/categories/javaScript-php/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript,php</span>
                   </a>
                 </span>
 
@@ -378,18 +378,16 @@
 
       
         
-          <p>题目中的上传包含两部分，一部分是上传文件，一部分是利用PHP执行脚本</p>
-<h3 id="上传文件到指定文件夹"><a href="#上传文件到指定文件夹" class="headerlink" title="上传文件到指定文件夹"></a>上传文件到指定文件夹</h3><p>所谓文件上传是指将本地文本文件，图片视频或者音频等文件上传到服务器上，以供后续操作的过程。<br>上传文件有几种方式，包括：</p>
+          <h3 id="JavaScript中日期转换"><a href="#JavaScript中日期转换" class="headerlink" title="JavaScript中日期转换"></a>JavaScript中日期转换</h3><h4 id="日期字符串转时间戳"><a href="#日期字符串转时间戳" class="headerlink" title="日期字符串转时间戳"></a>日期字符串转时间戳</h4><p>获取当前时间戳，使用new Date()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var timestamps = new Date(); //Mon May 14 2018 22:17:38 GMT+0800 (中国标准时间)</div><div class="line">timestamps.getFullYear() //2018 获取年</div><div class="line">timestamps.getMonth() +1 // 5 获取月份  此处需要+1，因为js中从0开始算月，0就是1月，1就是2月</div><div class="line">timestamps.getDate() // 14 获取日</div></pre></td></tr></table></figure>
+<p>如果想将当前时间转换成字符串，可以使用两个函数</p>
 <ul>
-<li>单纯的form表单上传提交<br>使用form表单的input[type=”file”]控件，打开系统的文件对话选择框，选择文件然后利用submit和form中跳转的action设置实现上传。<br><strong>优点</strong>：多浏览器兼容，简单<br><strong>缺点</strong>：PHP会限制浏览器上传文件的大小，而且form表单提交后会刷新页面，用户体验不好<br>【注意】  </li>
+<li>toLocaleString()  //获取的是本地时间字符串，但是因为月份日期“0”不显示，位数不固定，需要截取的话，只获取年月日，可以用正则，而且不同浏览器下转换格式不同</li>
 </ul>
-<ol>
-<li>input中type要设置成type=”file”；</li>
-<li>设置form中method=”post”；</li>
-<li>form中enctype中有三种取值
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timestamps.toLocaleString() //2018/5/14 下午10:23:46（chrome）</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/07/如何在客户端上传shell脚本文件，并利用PHP调用执行脚本/#more" rel="contents">
+            <a class="btn" href="/2018/05/15/日期转换的那些事儿/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -433,7 +431,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -482,7 +480,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -493,7 +491,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -504,7 +502,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
