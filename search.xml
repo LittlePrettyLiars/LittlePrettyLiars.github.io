@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[js获取高度宽度的方法]]></title>
     <url>%2F2018%2F08%2F23%2Fjs%E8%8E%B7%E5%8F%96%E9%AB%98%E5%BA%A6%E5%AE%BD%E5%BA%A6%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[总结一下，js获取屏幕、视口或者DOM元素高度宽度的方法 屏幕分辨率12window.screen.heightwindow.screen.width 浏览器的屏幕的可用宽度（不包括任务栏）12window.screen.availWidthwindow.screen.availHeight 网页可见区域12document.body.clientWidthdocument.body.clientHeight 网页可见区域宽高（加边线）12document.body.offsetWidthdocument.body.offsetHeight 网页正文全文宽高12document.body.scrollWidthdocument.body.scrollHeight 当前页面滚动条横纵坐标值纵坐标（横坐标也一样，只是将scrollTop换成scrollLeft,window.pageYOffset换成window.pageXOffset）12345678document.documentElement.scrollTop //页面具有 DTD，或者说指定了 DOCTYPE 时window.pageYOffset //低版本IE浏览器不支持 document.body.scrollTop //页面不具有 DTD，或者说没有指定了 DOCTYPEvar scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; //保险办法 获取元素的宽高1234document.getElementsByClassName(&apos;XXX&apos;)[0].offsetWidthdocument.getElementsByClassName(&apos;XXX&apos;)[0].offsetHeightdocument.getElementById(&apos;XXX&apos;).offsetWidth;document.getElementById(&apos;XXX&apos;).offsetHeight;]]></content>
+    <content type="text"><![CDATA[整理一下，js获取屏幕、视口或者DOM元素高度宽度的方法 屏幕分辨率12window.screen.heightwindow.screen.width 浏览器的屏幕的可用宽度（不包括任务栏）12window.screen.availWidthwindow.screen.availHeight 网页可见区域12document.body.clientWidthdocument.body.clientHeight 网页可见区域宽高（加边线）12document.body.offsetWidthdocument.body.offsetHeight 网页正文全文宽高12document.body.scrollWidthdocument.body.scrollHeight 当前页面滚动条横纵坐标值纵坐标（横坐标也一样，只是将scrollTop换成scrollLeft,window.pageYOffset换成window.pageXOffset）12345678document.documentElement.scrollTop //页面具有 DTD，或者说指定了 DOCTYPE 时window.pageYOffset //低版本IE浏览器不支持 document.body.scrollTop //页面不具有 DTD，或者说没有指定了 DOCTYPEvar scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; //保险办法 获取元素的宽高1234document.getElementsByClassName(&apos;XXX&apos;)[0].offsetWidthdocument.getElementsByClassName(&apos;XXX&apos;)[0].offsetHeightdocument.getElementById(&apos;XXX&apos;).offsetWidth;document.getElementById(&apos;XXX&apos;).offsetHeight;]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -92,8 +92,8 @@
         <category>javaScript,php</category>
       </categories>
       <tags>
-        <tag>javaScript</tag>
         <tag>PHP</tag>
+        <tag>javaScript</tag>
         <tag>日期转换</tag>
         <tag>时间戳</tag>
       </tags>
