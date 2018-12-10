@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[sublime中文正常显示]]></title>
+    <url>%2F2018%2F12%2F10%2Fsublime%E4%B8%AD%E6%96%87%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[安装ConvertToUTF8环境：windows +sublime3 ctrl+shift+p 打开命令面板 在命令面板输入install回车进入安装面板 在安装面板输入ConvertToUTF8 回车等待安装完成，完成后会自动打开一个文件 然后重启sublime打开文件中文即可正常显示 在已经安装ConvertToUTF8插件后打开文件发现依旧中文乱码解决办法选择菜单File &gt;Save with Encoding &gt;Western(Windows 1252)重新发开文件就会正常显示]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu上ltp-server的搭建]]></title>
+    <url>%2F2018%2F12%2F10%2Fubuntu%E4%B8%8Altp-server%E7%9A%84%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[搭建流程（以ltp3.4.0为例） 下载LTP模型文件ltp-data-v3.4.0.tar.gz下载地址：https://pan.baidu.com/share/link?shareid=1988562907&amp;uk=2738088569#list/path=%2Fltp-models%2F3.4.0如果是windows系统，可以直接下载ltp-data-v3.4.0.zip 下载LTP项目文件tp-3.4.0.tar.gz下载地址：https://github.com/HIT-SCIR/ltp/releases-创建文件夹， 解压项目文件放入其中，然后将模型文件放入项目文件 LTP使用Cmake构建项目，所以需要先安装Cmakecmake是一个跨平台的编译工具，特点是语句简单编译高效，安装cmake 之前应该系统中装好了gcc或者g++，否则无法编译，当然如果你已经安装过，则可以忽略此步骤安装g++ 1sudo apt-get install g++ 安装cmake方法一1apt install cmake 如果权限不够，前面加sudo 方法二（此处仅介绍Linux系统下安装流程，windows有对应的方法，可自行查阅） linux下打开终端， 1getconf LONG_BIT 如果是64位表示是linux64位的，如果是32则表示系统是linux32位的，根据位数来选择对应的安装版本 选择文件夹，然后下载cmake安装包1wget https://cmake.org/files/v3.13/cmake-3.13.0-rc3-Linux-x86_64.tar.gz 因为我的是64位的，所以上面链接是64位的，大家根据自己的需要自行修改 在文件夹内解压 1tar zxvf cmake-3.13.0-rc3-Linux-x86_64.tar.gz 切换到解压的文件夹下 1cd cmake-3.13.0-rc3 执行安装过程 1./bootstrap 然后执行 12gmake gamke install 即可安装完成，完成后可以通过cmake –version查看版本号 接上面步骤 进入刚刚解压的项目文件 然后执行以下命令 123./configuremake 等待make命令结束后，如果编译成功，会在项目文件ltp-3.4.0 bin目录下生成ltp_test，ltp_server二进制程序会在bin/examples目录下生成以下二进制程序 启动服务器，启动时可以设置一些参数 12345678./bin/ltp_server --port 8020 --threads 4 --log-level 2 &amp;``` 具体的参数含义可以自行阅读文档。- 最后，可用curl测试输出 curl -d “s=我爱中国” “http://127.0.0.1:8020/ltp“```结果如图：]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>ltp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS判断一个数是否为质数]]></title>
     <url>%2F2018%2F09%2F05%2FJS%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%A8%E6%95%B0%2F</url>
     <content type="text"><![CDATA[判断是否是素数非正则实现1234567891011121314151617181920212223function isPrime(num)&#123; // 判断是否为数字 if(typeof num !== &quot;number&quot; || !Number.isInteger(num))&#123; // Number.isInterget 判断是否为整数 return false &#125; //因为2是比较特殊的质数，所以先拿出来 if(num == 2)&#123; return true &#125;else if(num % 2 == 0)&#123; //大于2 的偶数都不是质数 return false &#125; //依次判断是否能被奇数整除，最大循环为数值的开方 let squareRoot = Math.sqrt(num) //因为2已经验证过，所以从3开始；且已经排除偶数，所以每次加2 for(let i = 3; i &lt;= squareRoot; i += 2) &#123; if (num % i === 0) &#123; return false &#125; &#125; return true&#125; 正则实现12345function isPrime(num) &#123;return !/^1?$|^(11+?)\1+$/.test(Array(num+1).join(&apos;1&apos;))&#125;console.log(isPrime(19)) // true 正则表达式注解首先，我们看到这个表达式中有“|”，也就是说这个表达式可以分成两个部分：/^1?$/ 和 /^(11+?)\1+$/ 第一部分：/^1?$/， 匹配“空串”以及字串中只有一个“1”的字符串 第二部分：/^(11+?)1+$/ ，这个部分是整个表达式的关键部分。其可以分成两个部分，(11+?) 和 1+$ ，前半部匹配以“11”开头的并重复0或n个1的字符串，后面的部分意思是把前半部分作为一个字串去匹配还剩下的字符串1次或多次（这句话的意思是——剩余的字串的1的个数要是前面字串1个数的整数倍，也就是值是否是2,3,4…的整数倍） Array(num+1).join(‘1’)，Array(num+1)表示有num个元素的空数组，join(1)将数组中每个元素用1连接成一个字符串（num+1个数组需要用num个1连接），所以这个表达式就是num个1组成的字符串 上面介绍的正则表达式是取非素数，要得到素数还得要对整个表达式求反]]></content>
